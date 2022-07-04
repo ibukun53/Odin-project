@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-alert */
 const choices = ['rock', 'paper', 'scissors'];
 const computerDisplayChoice = document.getElementById('computer-choice');
@@ -12,22 +13,22 @@ function validateInput(choice) {
 }
 
 const generateUserChoice = () => {
-  let userChoice = prompt('Type rock, paper, or scissors');
-  while (userChoice === null) {
-    userChoice = prompt('Type rock, paper, or scissors');
+  let input = prompt('Type rock, paper, or scissors');
+  while (input === null) {
+    input = prompt('Type rock, paper, or scissors');
   }
-  userChoice = userChoice.toLowerCase();
-  let check = validateInput(userChoice);
+  input = input.toLowerCase();
+  let check = validateInput(input);
   while (check === false) {
-    userChoice = prompt(
+    input = prompt(
       'Type rock, paper, or scissor.spelling needs to be exact, but capitalise doesnot matter',
     );
-    while (userChoice == null) {
-      userChoice = prompt('Type rock, paper, or scissors');
+    while (input == null) {
+      input = prompt('Type rock, paper, or scissors');
     }
-    userChoice = userChoice.toLowerCase();
-    check = validateInput(userChoice);
-  }
+    input = input.toLowerCase();
+    check = validateInput(input);
+  } userChoice = input;
   userDisplayChoice.innerHTML = userChoice;
 };
 
@@ -42,11 +43,11 @@ const generateComputerChoice = () => {
   } else {
     computerChoice = null;
   }
-  computerDisplayChoice.innerHTML = computerChoice;
+  computerDisplayChoice.innerHTML = computerChoice; 
 };
 
 const getResult = () => {
-  if (computerChoice === 'rock' && userChoice === 'rock') {
+  if (computerChoice && userChoice) {
     result = 'It\'s a draw!';
   } else if (computerChoice === 'rock' && userChoice === 'paper') {
     result = 'you win!';
@@ -62,7 +63,11 @@ const getResult = () => {
     result = 'not supported';
   }
   resultDisplay.innerHTML = result;
+  console.log(userChoice);
+  console.log(computerChoice);
+  console.log(result);
 };
+
 function playRound() {
   generateUserChoice();
   generateComputerChoice();
