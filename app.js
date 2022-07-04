@@ -1,13 +1,38 @@
+/* eslint-disable no-alert */
+const choices = ['rock', 'paper', 'scissors'];
 const computerDisplayChoice = document.getElementById('computer-choice');
 const userDisplayChoice = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
-const possibleChoice = document.querySelectorAll('button');
-let userChoice;
 let computerChoice;
 let result;
+let userChoice;
+
+function validateInput(choice) {
+  return choices.includes(choice);
+}
+
+const generateUserChoice = () => {
+  let userChoice = prompt('Type rock, paper, or scissors');
+  while (userChoice === null) {
+    userChoice = prompt('Type rock, paper, or scissors');
+  }
+  userChoice = userChoice.toLowerCase();
+  let check = validateInput(userChoice);
+  while (check === false) {
+    userChoice = prompt(
+      'Type rock, paper, or scissor.spelling needs to be exact, but capitalise doesnot matter',
+    );
+    while (userChoice == null) {
+      userChoice = prompt('Type rock, paper, or scissors');
+    }
+    userChoice = userChoice.toLowerCase();
+    check = validateInput(userChoice);
+  }
+  userDisplayChoice.innerHTML = userChoice;
+};
 
 const generateComputerChoice = () => {
-  const randomNumber = Math.floor(Math.random() * possibleChoice.length) + 1;
+  const randomNumber = Math.floor(Math.random() * choices.length) + 1;
   if (randomNumber === 1) {
     computerChoice = 'rock';
   } else if (randomNumber === 2) {
@@ -15,13 +40,13 @@ const generateComputerChoice = () => {
   } else if (randomNumber === 3) {
     computerChoice = 'paper';
   } else {
-    computerChoice = false;
+    computerChoice = null;
   }
   computerDisplayChoice.innerHTML = computerChoice;
 };
 
 const getResult = () => {
-  if (computerChoice === userChoice) {
+  if (computerChoice === 'rock' && userChoice === 'rock') {
     result = 'It\'s a draw!';
   } else if (computerChoice === 'rock' && userChoice === 'paper') {
     result = 'you win!';
@@ -34,14 +59,17 @@ const getResult = () => {
   } else if (computerChoice === 'scissors' && userChoice === 'rock') {
     result = 'you lose!';
   } else {
-    result = 'you win!';
+    result = 'not supported';
   }
   resultDisplay.innerHTML = result;
 };
-
-possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
-  userChoice = e.target.id;
-  userDisplayChoice.innerHTML = userChoice;
+function playRound() {
+  generateUserChoice();
   generateComputerChoice();
   getResult();
-}));
+}
+
+function button() {
+  playRound();
+}
+button();
