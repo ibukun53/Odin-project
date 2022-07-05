@@ -4,9 +4,10 @@ const choices = ['rock', 'paper', 'scissors'];
 const computerDisplayChoice = document.getElementById('computer-choice');
 const userDisplayChoice = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
-let computerChoice;
-let result;
-let userChoice;
+let userChoice ;
+let computerChoice ;
+let result ;
+let winners =[]
 
 function validateInput(choice) {
   return choices.includes(choice);
@@ -46,35 +47,36 @@ const generateComputerChoice = () => {
   computerDisplayChoice.innerHTML = computerChoice; 
 };
 
-const getResult = () => {
-  if (computerChoice && userChoice) {
-    result = 'It\'s a draw!';
-  } else if (computerChoice === 'rock' && userChoice === 'paper') {
+ const getResult = () => {
+  if (computerChoice === 'rock' && userChoice === 'paper') {
     result = 'you win!';
   } else if (computerChoice === 'rock' && userChoice === 'scissors') {
-    result = 'you lost!';
+    result = 'you lose!';
   } else if (computerChoice === 'paper' && userChoice === 'scissors') {
-    result = 'you win!';
+    result = 'you win!'; 
   } else if (computerChoice === 'paper' && userChoice === 'rock') {
     result = 'you lose!';
   } else if (computerChoice === 'scissors' && userChoice === 'rock') {
     result = 'you lose!';
+  } else if (computerChoice && userChoice ) {
+    result = 'draw';
+  } else if (computerChoice === 'scissors' && userChoice === 'paper') {
+    result = 'you win!';
   } else {
     result = 'not supported';
   }
-  resultDisplay.innerHTML = result;
-  console.log(userChoice);
-  console.log(computerChoice);
-  console.log(result);
+resultDisplay.innerHTML = result;
 };
 
+
 function playRound() {
-  generateUserChoice();
-  generateComputerChoice();
-  getResult();
+  const userSelection = generateUserChoice();
+  const computerSelection = generateComputerChoice();
+ const winner= getResult(userSelection, computerSelection);
+ winners.push(winner);
 }
 
 function button() {
   playRound();
+
 }
-button();
