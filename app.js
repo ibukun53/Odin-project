@@ -2,10 +2,10 @@ const choices = ['rock', 'paper', 'scissors'];
 const computerDisplayChoice = document.getElementById('computer-choice');
 const userDisplayChoice = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
-let userChoice ;
-let computerChoice ;
-let result ;
-let winners = [];
+let userChoice 
+let computerChoice
+let result 
+const winners = []
 
 function validateInput(choice) {
   return choices.includes(choice);
@@ -28,7 +28,7 @@ const generateUserChoice = () => {
     input = input.toLowerCase();
     check = validateInput(input);
   } userChoice = input;
-    userDisplayChoice.innerHTML = userChoice;
+  userDisplayChoice.innerHTML = userChoice;
 };
 
 const generateComputerChoice = () => {
@@ -42,7 +42,7 @@ const generateComputerChoice = () => {
   } else {
     computerChoice = null;
   }
-  computerDisplayChoice.innerHTML = computerChoice; 
+ computerDisplayChoice.innerHTML = computerChoice; 
 };
 
  const getResult = () => {
@@ -71,8 +71,8 @@ const playRound = () => {
   const computerSelection = generateComputerChoice();
   const winner = getResult(userSelection, computerSelection);
   winners.push(winner);
-}
+};
 
 const button = () => {
   playRound();
-}
+};
