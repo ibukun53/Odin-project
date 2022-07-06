@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable no-alert */
 const choices = ['rock', 'paper', 'scissors'];
 const computerDisplayChoice = document.getElementById('computer-choice');
 const userDisplayChoice = document.getElementById('your-choice');
@@ -7,7 +5,7 @@ const resultDisplay = document.getElementById('result');
 let userChoice ;
 let computerChoice ;
 let result ;
-let winners =[]
+let winners = [];
 
 function validateInput(choice) {
   return choices.includes(choice);
@@ -30,7 +28,7 @@ const generateUserChoice = () => {
     input = input.toLowerCase();
     check = validateInput(input);
   } userChoice = input;
-  userDisplayChoice.innerHTML = userChoice;
+    userDisplayChoice.innerHTML = userChoice;
 };
 
 const generateComputerChoice = () => {
@@ -65,18 +63,16 @@ const generateComputerChoice = () => {
   } else {
     result = 'not supported';
   }
-resultDisplay.innerHTML = result;
+  resultDisplay.innerHTML = result;
 };
 
-
-function playRound() {
+const playRound = () => {
   const userSelection = generateUserChoice();
   const computerSelection = generateComputerChoice();
- const winner= getResult(userSelection, computerSelection);
- winners.push(winner);
+  const winner = getResult(userSelection, computerSelection);
+  winners.push(winner);
 }
 
-function button() {
+const button = () => {
   playRound();
-
 }
