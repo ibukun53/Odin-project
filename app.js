@@ -2,9 +2,9 @@ const choices = ['rock', 'paper', 'scissors'];
 const computerDisplayChoice = document.getElementById('computer-choice');
 const userDisplayChoice = document.getElementById('user-choice');
 const resultDisplay = document.getElementById('result');
-let userChoice; 
+let userChoice;
 let computerChoice;
-let result; 
+let result;
 const winners = [];
 
 function validateInput(choice) {
@@ -12,7 +12,6 @@ function validateInput(choice) {
 }
 
 const generateUserChoice = () => {
- 
   let input = prompt('Type rock, paper, or scissors');
   while (input === null) {
     input = prompt('Type rock, paper, or scissors');
@@ -28,13 +27,10 @@ const generateUserChoice = () => {
     }
     input = input.toLowerCase();
     check = validateInput(input);
-  }  
+  }
   userChoice = input;
   userDisplayChoice.innerHTML = userChoice;
 };
-
-
-
 const generateComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * choices.length) + 1;
   if (randomNumber === 1) {
@@ -46,7 +42,7 @@ const generateComputerChoice = () => {
   } else {
     computerChoice = null;
   }
-  computerDisplayChoice.innerHTML = computerChoice; 
+  computerDisplayChoice.innerHTML = computerChoice;
 };
 
 const getResult = () => {
@@ -55,7 +51,7 @@ const getResult = () => {
   } else if (computerChoice === 'rock' && userChoice === 'scissors') {
     result = 'you lose!';
   } else if (computerChoice === 'paper' && userChoice === 'scissors') {
-    result = 'you win!'; 
+    result = 'you win!';
   } else if (computerChoice === 'paper' && userChoice === 'rock') {
     result = 'you lose!';
   } else if (computerChoice === 'scissors' && userChoice === 'rock') {
@@ -69,20 +65,15 @@ const getResult = () => {
   }
   resultDisplay.innerHTML = result;
 };
-
 const playRound = () => {
   const userSelection = generateUserChoice();
   const computerSelection = generateComputerChoice();
   const winner = getResult(userSelection, computerSelection);
-  winners.push(winner); 
+  winners.push(winner);
 };
 
 const button = () => {
-  for(i =1; i<= 2; i++){
-    playRound();
-  }
+  playRound();
 };
 
-
-button;
-
+button();
