@@ -1,17 +1,18 @@
 const choices = ['rock', 'paper', 'scissors'];
 const computerDisplayChoice = document.getElementById('computer-choice');
-const userDisplayChoice = document.getElementById('your-choice');
+const userDisplayChoice = document.getElementById('user-choice');
 const resultDisplay = document.getElementById('result');
-let userChoice 
-let computerChoice
-let result 
-const winners = []
+let userChoice; 
+let computerChoice;
+let result; 
+const winners = [];
 
 function validateInput(choice) {
   return choices.includes(choice);
 }
 
 const generateUserChoice = () => {
+ 
   let input = prompt('Type rock, paper, or scissors');
   while (input === null) {
     input = prompt('Type rock, paper, or scissors');
@@ -27,9 +28,12 @@ const generateUserChoice = () => {
     }
     input = input.toLowerCase();
     check = validateInput(input);
-  } userChoice = input;
+  }  
+  userChoice = input;
   userDisplayChoice.innerHTML = userChoice;
 };
+
+
 
 const generateComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * choices.length) + 1;
@@ -42,10 +46,10 @@ const generateComputerChoice = () => {
   } else {
     computerChoice = null;
   }
- computerDisplayChoice.innerHTML = computerChoice; 
+  computerDisplayChoice.innerHTML = computerChoice; 
 };
 
- const getResult = () => {
+const getResult = () => {
   if (computerChoice === 'rock' && userChoice === 'paper') {
     result = 'you win!';
   } else if (computerChoice === 'rock' && userChoice === 'scissors') {
@@ -56,7 +60,7 @@ const generateComputerChoice = () => {
     result = 'you lose!';
   } else if (computerChoice === 'scissors' && userChoice === 'rock') {
     result = 'you lose!';
-  } else if (computerChoice && userChoice ) {
+  } else if (computerChoice && userChoice) {
     result = 'draw';
   } else if (computerChoice === 'scissors' && userChoice === 'paper') {
     result = 'you win!';
@@ -70,9 +74,15 @@ const playRound = () => {
   const userSelection = generateUserChoice();
   const computerSelection = generateComputerChoice();
   const winner = getResult(userSelection, computerSelection);
-  winners.push(winner);
+  winners.push(winner); 
 };
 
 const button = () => {
-  playRound();
+  for(i =1; i<= 2; i++){
+    playRound();
+  }
 };
+
+
+button;
+
