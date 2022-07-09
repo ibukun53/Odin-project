@@ -10,6 +10,15 @@ let computerChoice;
 let result;
 const winners = [];
 let output;
+const score = [0, 0, 0];
+
+const logRound = () => {
+  console.log('Round');
+  console.log('Player Choice', userChoice);
+  console.log('Computer Choice', computerChoice);
+  console.log(result, 'won the round');
+  console.log('........................');
+};
 
 function validateInput(choice) {
   return choices.includes(choice);
@@ -53,25 +62,24 @@ const getResult = () => {
   if ((userChoice === 'paper' && computerChoice === 'rock')
   || (userChoice === 'rock' && computerChoice === 'scissors')
   || (userChoice === 'scissors' && computerChoice === 'paper')) {
-    result = 'you win!';
+    result = 'player win!';
   } else if ((computerChoice === 'paper' && userChoice === 'rock')
   || (computerChoice === 'rock' && userChoice === 'scissors')
   || (computerChoice === 'scissors' && userChoice === 'paper')) {
-    result = 'you lose!';
+    result = 'computer win!';
   } else if ((computerChoice === 'paper' && userChoice === 'paper')
   || (computerChoice === 'rock' && userChoice === 'rock')
   || (computerChoice === 'scissors' && userChoice === 'cissors')) {
-    result = 'you draw!';
+    result = 'draw!';
   } else {
     result = 'not supported';
   }
   resultDisplay.innerHTML = result;
-  const score = [0, 0, 0];
 
   if ((userChoice === 'paper' && computerChoice === 'rock')
  || (userChoice === 'rock' && computerChoice === 'scissors')
  || (userChoice === 'scissors' && computerChoice === 'paper')) {
-    result = 'you win!';
+    result = 'player win!';
     output = 'player win';
     score[0]++;
   } else if ((userChoice === 'paper' && computerChoice === 'paper')
@@ -83,12 +91,13 @@ const getResult = () => {
   } else if ((computerChoice === 'paper' && userChoice === 'rock')
      || (computerChoice === 'rock' && userChoice === 'scissors')
      || (computerChoice === 'scissors' && userChoice === 'paper')) {
+    result = 'computer win';
     output = 'computer win';
     score[2]++;
   } else {
     result = 'not supported';
   }
-  winnerDisplay.innerHTML = result;
+  winnerDisplay.innerHTML = output;
   console.log(output);
   console.log('Player :', `${score[0]}`);
   console.log('Computer :', `${score[2]}`);
@@ -100,10 +109,12 @@ const playRound = () => {
   const computerSelection = generateComputerChoice();
   const winner = getResult(userSelection, computerSelection);
   winners.push(winner);
+  logRound(userSelection, computerSelection, winner);
 };
 
 const button = () => {
-  playRound();
+  for (let i = 1; i <= 5; i++) {
+    playRound();
+  }
 };
-
 button();
