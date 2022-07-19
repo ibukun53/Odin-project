@@ -1,51 +1,24 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable no-console */
-const choices = ['rock', 'paper', 'scissors'];
 const computerDisplayChoice = document.getElementById('computer-choice');
-const userDisplayChoice = document.getElementById('user-choice');
+const userDisplayChoice = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
-const winnerDisplay = document.getElementById('winner');
+const possibleChoice = document.querySelectorAll('button');
+const gameDisplay = document.querySelector('.game');
+const roundDisplay = document.getElementById('rounds');
+const computerResultDisplay = document.getElementById('computer-result');
+const userResultDisplay = document.getElementById('player-result');
+const drawResultDisplay = document.getElementById('draw-result');
+const resultResultDisplay = document.getElementById('team-result');
 let userChoice;
 let computerChoice;
 let result;
-const winners = [];
 let output;
+const winners = [];
 const score = [0, 0, 0];
 
-const logRound = () => {
-  console.log('Round');
-  console.log('Player Choice', userChoice);
-  console.log('Computer Choice', computerChoice);
-  console.log(result, 'won the round');
-  console.log('........................');
-};
-
-function validateInput(choice) {
-  return choices.includes(choice);
-}
-
-const generateUserChoice = () => {
-  let input = prompt('Type rock, paper, or scissors');
-  while (input === null) {
-    input = prompt('Type rock, paper, or scissors');
-  }
-  input = input.toLowerCase();
-  let check = validateInput(input);
-  while (check === false) {
-    input = prompt(
-      'Type rock, paper, or scissor.spelling needs to be exact, but capitalise doesnot matter',
-    );
-    while (input == null) {
-      input = prompt('Type rock, paper, or scissors');
-    }
-    input = input.toLowerCase();
-    check = validateInput(input);
-  }
-  userChoice = input;
-  userDisplayChoice.innerHTML = userChoice;
-};
 const generateComputerChoice = () => {
-  const randomNumber = Math.floor(Math.random() * choices.length) + 1;
+  const randomNumber = Math.floor(Math.random() * possibleChoice.length) + 1;
   if (randomNumber === 1) {
     computerChoice = 'rock';
   } else if (randomNumber === 2) {
@@ -69,13 +42,14 @@ const getResult = () => {
     result = 'computer win!';
   } else if ((computerChoice === 'paper' && userChoice === 'paper')
   || (computerChoice === 'rock' && userChoice === 'rock')
-  || (computerChoice === 'scissors' && userChoice === 'cissors')) {
+  || (computerChoice === 'scissors' && userChoice === 'scissors')) {
     result = 'draw!';
   } else {
-    result = 'not supported';
+    result = '';
   }
   resultDisplay.innerHTML = result;
-
+};
+const generateWinnerDisplay = () => {
   if ((userChoice === 'paper' && computerChoice === 'rock')
  || (userChoice === 'rock' && computerChoice === 'scissors')
  || (userChoice === 'scissors' && computerChoice === 'paper')) {
@@ -96,25 +70,44 @@ const getResult = () => {
     score[2]++;
   } else {
     result = 'not supported';
+    output = '';
   }
-  winnerDisplay.innerHTML = output;
-  console.log(output);
-  console.log('Player :', `${score[0]}`);
-  console.log('Computer :', `${score[2]}`);
-  console.log('Draw :', `${score[1]}`);
+  userResultDisplay.innerHTML = `${score[0]}`;
+  computerResultDisplay.innerHTML = `${score[2]}`;
+  drawResultDisplay.innerHTML = `${score[1]}`;
+  resultResultDisplay.innerHTML = output;
 };
+function generateUserChoice() {
+  possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
+    userChoice = e.target.id;
+    userDisplayChoice.innerHTML = userChoice;
+    generateComputerChoice();
+    getResult();
+  }));
+}
 
 const playRound = () => {
-  const userSelection = generateUserChoice();
-  const computerSelection = generateComputerChoice();
-  const winner = getResult(userSelection, computerSelection);
+  generateUserChoice();
+  generateWinnerDisplay();
+  const winner = getResult();
   winners.push(winner);
-  logRound(userSelection, computerSelection, winner);
 };
-
-const button = () => {
-  for (let i = 1; i <= 5; i++) {
+let count = 5;
+const games = () => {
+  for (let count = 1; count <= 5; count++) {
     playRound();
   }
 };
-button();
+
+const game = () => {
+  gameDisplay.onclick = () => {
+    for (let count = 1; count <= 5; count++) {
+      playRound();
+    }
+    count -= 1;
+    roundDisplay.innerHTML = `${count}: rounds left`;
+  };
+};
+
+games();
+game();
