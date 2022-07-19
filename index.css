@@ -1,10 +1,13 @@
-body{
-    background-color: blue;
+body {
+  background-color: rgb(118, 118, 150);
 }
 
-table, th, td {
-    border: 1px solid black;
+table,
+th,
+td {
+  border: 1px solid black;
 }
-table{
-    width: 20%;
+
+table {
+  width: 40%;
 }

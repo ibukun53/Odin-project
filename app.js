@@ -98,14 +98,13 @@ const games = () => {
     playRound();
   }
 };
-
 const game = () => {
   gameDisplay.onclick = () => {
-    for (let count = 1; count <= 5; count++) {
-      playRound();
+    for (let i = 1; i <= 1; i++) {
+      playRound(i);
     }
     count -= 1;
-    roundDisplay.innerHTML = `${count}: rounds left`;
+    roundDisplay.innerHTML = `${count} Live`;
   };
 };
 
