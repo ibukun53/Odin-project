@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-console */
 const computerDisplayChoice = document.getElementById('computer-choice');
@@ -77,36 +78,36 @@ const generateWinnerDisplay = () => {
   drawResultDisplay.innerHTML = `${score[1]}`;
   resultResultDisplay.innerHTML = output;
 };
+
 function generateUserChoice() {
   possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id;
     userDisplayChoice.innerHTML = userChoice;
     generateComputerChoice();
     getResult();
+    generateWinnerDisplay();
   }));
 }
 
 const playRound = () => {
-  generateUserChoice();
-  generateWinnerDisplay();
-  const winner = getResult();
+ const computerSelection = generateComputerChoice();
+  const userSelection = generateUserChoice();
+  const winner = getResult(computerSelection, userSelection);
   winners.push(winner);
 };
-let count = 5;
-const games = () => {
-  for (let count = 1; count <= 5; count++) {
-    playRound();
-  }
-};
-const game = () => {
-  gameDisplay.onclick = () => {
-    for (let i = 1; i <= 1; i++) {
-      playRound(i);
-    }
-    count -= 1;
-    roundDisplay.innerHTML = `${count} Live`;
-  };
-};
+playRound();
 
-games();
-game();
+let count = 5;
+  const game = () => {
+    gameDisplay.onclick = () => {
+     count -= 1;
+     if (count < 0) {
+      count = 0;
+     }
+      roundDisplay.innerHTML = `${count} Live`;
+    };
+    while (gameDisplay.onclick) {
+      computerChoice = '';
+    }
+    };
+ game();
