@@ -11,6 +11,7 @@ const computerResultDisplay = document.getElementById('computer-result');
 const userResultDisplay = document.getElementById('player-result');
 const drawResultDisplay = document.getElementById('draw-result');
 const resultResultDisplay = document.getElementById('team-result');
+
 let userChoice;
 let computerChoice;
 let result;
@@ -27,7 +28,7 @@ const generateComputerChoice = () => {
   } else if (randomNumber === 3) {
     computerChoice = 'paper';
   } else {
-    computerChoice = null;
+    computerChoice = '';
   }
   computerDisplayChoice.innerHTML = computerChoice;
 };
@@ -79,15 +80,15 @@ const generateWinnerDisplay = () => {
   resultResultDisplay.innerHTML = output;
 };
 
-function generateUserChoice() {
-  possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
-    userChoice = e.target.id;
-    userDisplayChoice.innerHTML = userChoice;
-    generateComputerChoice();
-    getResult();
-    generateWinnerDisplay();
-  }));
-}
+  function generateUserChoice() {
+    possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
+      userChoice = e.target.id;
+      userDisplayChoice.innerHTML = userChoice;
+      generateComputerChoice();
+      getResult();
+      generateWinnerDisplay();
+    }));
+  }
 
 const playRound = () => {
  const computerSelection = generateComputerChoice();
@@ -106,8 +107,6 @@ let count = 5;
      }
       roundDisplay.innerHTML = `${count} Live`;
     };
-    while (gameDisplay.onclick) {
-      computerChoice = '';
-    }
     };
+
  game();
