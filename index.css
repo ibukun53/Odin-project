@@ -11,3 +11,16 @@ td {
 table {
   width: 40%;
 }
+
+h1 {
+  font-size: 30px;
+}
+
+#game {
+  padding: 5px;
+  margin: 29px;
+  background-color: black;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+}
