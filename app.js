@@ -1,6 +1,4 @@
-/* eslint-disable indent */
 /* eslint-disable no-plusplus */
-/* eslint-disable no-console */
 const computerDisplayChoice = document.getElementById('computer-choice');
 const userDisplayChoice = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
@@ -78,15 +76,15 @@ const generateWinnerDisplay = () => {
   resultResultDisplay.innerHTML = output;
 };
 
-  function generateUserChoice() {
-    possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
-      userChoice = e.target.id;
-      generateComputerChoice();
-      getResult();
-      generateWinnerDisplay();
-      userDisplayChoice.innerHTML = userChoice;
-    }));
-  }
+function generateUserChoice() {
+  possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
+    userChoice = e.target.id;
+    generateComputerChoice();
+    getResult();
+    generateWinnerDisplay();
+    userDisplayChoice.innerHTML = userChoice;
+  }));
+}
 
 const playRound = () => {
   generateUserChoice();
@@ -94,20 +92,20 @@ const playRound = () => {
 playRound();
 let count = 5;
 const game = () => {
- gameDisplay.onclick = () => {
- count -= 1;
-     if (count < 0) {
+  gameDisplay.onclick = () => {
+    count -= 1;
+    if (count < 0) {
       count = 0;
-     }
- const choices = document.querySelectorAll('.choice');
-  for (let i = 0; i < choices.length; i += 1) {
- if (choices[i].style.display === 'none' && 'block') {
-  choices[i].style.display = 'block' && 'block';
- } else {
-  choices[i].style.display = 'none';
- }
-  }
-     roundDisplay.innerHTML = `${count} Live`;
-    };
+    }
+    const choices = document.querySelectorAll('.choice');
+    for (let i = 0; i < choices.length; i += 1) {
+      if (choices[i].style.display === 'none') {
+        choices[i].style.display = 'block';
+      } else {
+        choices[i].style.display = 'none';
+      }
+    }
+    roundDisplay.innerHTML = `${count} Live`;
   };
-  game();
+};
+game();
