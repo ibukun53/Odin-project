@@ -52,39 +52,48 @@ const generateWinnerDisplay = () => {
  || (userChoice === 'rock' && computerChoice === 'scissors')
  || (userChoice === 'scissors' && computerChoice === 'paper')) {
     result = 'player win!';
-    output = 'player win';
     score[0]++;
   } else if ((userChoice === 'paper' && computerChoice === 'paper')
   || (userChoice === 'rock' && computerChoice === 'rock')
   || (userChoice === 'scissors' && computerChoice === 'scissors')) {
     result = 'draw!';
-    output = 'Draw';
     score[1]++;
   } else if ((computerChoice === 'paper' && userChoice === 'rock')
      || (computerChoice === 'rock' && userChoice === 'scissors')
      || (computerChoice === 'scissors' && userChoice === 'paper')) {
     result = 'computer win';
-    output = 'computer win';
     score[2]++;
   } else {
     result = 'not supported';
-    output = '';
   }
   userResultDisplay.innerHTML = `${score[0]}`;
   computerResultDisplay.innerHTML = `${score[2]}`;
   drawResultDisplay.innerHTML = `${score[1]}`;
+};
+const generateResultDisplay = () => {
+  if ((score[0] > score[2]
+  || score[0] > score[2])) {
+    output = 'Player win';
+  } else if ((score[2] > score[0])) {
+    output = 'Computer win';
+  } else if ((score[2] === score[0]
+    || score[0] === score[2])) {
+    output = 'draw';
+  } else {
+    output = 'no win';
+  }
   resultResultDisplay.innerHTML = output;
 };
-
-function generateUserChoice() {
+const generateUserChoice = () => {
   possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id;
     generateComputerChoice();
     getResult();
     generateWinnerDisplay();
+    generateResultDisplay();
     userDisplayChoice.innerHTML = userChoice;
   }));
-}
+};
 
 const playRound = () => {
   generateUserChoice();
