@@ -5,18 +5,16 @@ const computerDisplayChoice = document.getElementById('computer-choice');
 const userDisplayChoice = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
 const possibleChoice = document.querySelectorAll('button');
-const gameDisplay = document.querySelector('.game');
+const gameDisplay = document.querySelector('#game');
 const roundDisplay = document.getElementById('rounds');
 const computerResultDisplay = document.getElementById('computer-result');
 const userResultDisplay = document.getElementById('player-result');
 const drawResultDisplay = document.getElementById('draw-result');
 const resultResultDisplay = document.getElementById('team-result');
-
 let userChoice;
 let computerChoice;
 let result;
 let output;
-const winners = [];
 const score = [0, 0, 0];
 
 const generateComputerChoice = () => {
@@ -83,30 +81,33 @@ const generateWinnerDisplay = () => {
   function generateUserChoice() {
     possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
       userChoice = e.target.id;
-      userDisplayChoice.innerHTML = userChoice;
       generateComputerChoice();
       getResult();
       generateWinnerDisplay();
+      userDisplayChoice.innerHTML = userChoice;
     }));
   }
 
 const playRound = () => {
- const computerSelection = generateComputerChoice();
-  const userSelection = generateUserChoice();
-  const winner = getResult(computerSelection, userSelection);
-  winners.push(winner);
+  generateUserChoice();
 };
 playRound();
-
 let count = 5;
-  const game = () => {
-    gameDisplay.onclick = () => {
-     count -= 1;
+const game = () => {
+ gameDisplay.onclick = () => {
+ count -= 1;
      if (count < 0) {
       count = 0;
      }
-      roundDisplay.innerHTML = `${count} Live`;
+ const choices = document.querySelectorAll('.choice');
+  for (let i = 0; i < choices.length; i += 1) {
+ if (choices[i].style.display === 'none' && 'block') {
+  choices[i].style.display = 'block' && 'block';
+ } else {
+  choices[i].style.display = 'none';
+ }
+  }
+     roundDisplay.innerHTML = `${count} Live`;
     };
-    };
-
- game();
+  };
+  game();
