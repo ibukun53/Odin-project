@@ -9,6 +9,7 @@ const computerResultDisplay = document.getElementById('computer-result');
 const userResultDisplay = document.getElementById('player-result');
 const drawResultDisplay = document.getElementById('draw-result');
 const resultResultDisplay = document.getElementById('team-result');
+const choices = document.querySelectorAll('.choice');
 let userChoice;
 let computerChoice;
 let result;
@@ -29,24 +30,6 @@ const generateComputerChoice = () => {
   computerDisplayChoice.innerHTML = computerChoice;
 };
 
-const getResult = () => {
-  if ((userChoice === 'paper' && computerChoice === 'rock')
-  || (userChoice === 'rock' && computerChoice === 'scissors')
-  || (userChoice === 'scissors' && computerChoice === 'paper')) {
-    result = 'player win!';
-  } else if ((computerChoice === 'paper' && userChoice === 'rock')
-  || (computerChoice === 'rock' && userChoice === 'scissors')
-  || (computerChoice === 'scissors' && userChoice === 'paper')) {
-    result = 'computer win!';
-  } else if ((computerChoice === 'paper' && userChoice === 'paper')
-  || (computerChoice === 'rock' && userChoice === 'rock')
-  || (computerChoice === 'scissors' && userChoice === 'scissors')) {
-    result = 'draw!';
-  } else {
-    result = '';
-  }
-  resultDisplay.innerHTML = result;
-};
 const generateWinnerDisplay = () => {
   if ((userChoice === 'paper' && computerChoice === 'rock')
  || (userChoice === 'rock' && computerChoice === 'scissors')
@@ -57,30 +40,31 @@ const generateWinnerDisplay = () => {
   || (userChoice === 'rock' && computerChoice === 'rock')
   || (userChoice === 'scissors' && computerChoice === 'scissors')) {
     result = 'draw!';
-    score[1]++;
+    score[2]++;
   } else if ((computerChoice === 'paper' && userChoice === 'rock')
      || (computerChoice === 'rock' && userChoice === 'scissors')
      || (computerChoice === 'scissors' && userChoice === 'paper')) {
     result = 'computer win';
-    score[2]++;
+    score[1]++;
   } else {
     result = 'not supported';
   }
   userResultDisplay.innerHTML = `${score[0]}`;
-  computerResultDisplay.innerHTML = `${score[2]}`;
-  drawResultDisplay.innerHTML = `${score[1]}`;
+  computerResultDisplay.innerHTML = `${score[1]}`;
+  drawResultDisplay.innerHTML = `${score[2]}`;
+  resultDisplay.innerHTML = result;
 };
 const generateResultDisplay = () => {
-  if ((score[0] > score[2]
-  || score[0] > score[2])) {
+  if ((score[0] > score[1]
+  || score[0] > score[1])) {
     output = 'Player win';
-  } else if ((score[2] > score[0])) {
+  } else if ((score[1] > score[0])) {
     output = 'Computer win';
-  } else if ((score[2] === score[0]
-    || score[0] === score[2])) {
-    output = 'draw';
+  } else if ((score[1] === score[0]
+    || score[0] === score[1])) {
+    output = 'Draw';
   } else {
-    output = 'no win';
+    output = 'No win';
   }
   resultResultDisplay.innerHTML = output;
 };
@@ -88,7 +72,6 @@ const generateUserChoice = () => {
   possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id;
     generateComputerChoice();
-    getResult();
     generateWinnerDisplay();
     generateResultDisplay();
     userDisplayChoice.innerHTML = userChoice;
@@ -99,6 +82,9 @@ const playRound = () => {
   generateUserChoice();
 };
 playRound();
+for (let i = 0; i < choices.length; i++) {
+  choices[i].style.display = 'block';
+}
 let count = 5;
 const game = () => {
   gameDisplay.onclick = () => {
@@ -106,12 +92,11 @@ const game = () => {
     if (count < 0) {
       count = 0;
     }
-    const choices = document.querySelectorAll('.choice');
-    for (let i = 0; i < choices.length; i += 1) {
-      if (choices[i].style.display === 'none') {
-        choices[i].style.display = 'block';
-      } else {
+    for (let i = 0; i < choices.length; i++) {
+      if (choices[i].style.display === 'block') {
         choices[i].style.display = 'none';
+      } else {
+        choices[i].style.display = 'block';
       }
     }
     roundDisplay.innerHTML = `${count} Live`;
