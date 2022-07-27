@@ -2,7 +2,7 @@
 const computerDisplayChoice = document.getElementById('computer-choice');
 const userDisplayChoice = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
-const possibleChoice = document.querySelectorAll('button');
+const possibleChoice = document.querySelectorAll('.btn');
 const gameDisplay = document.querySelector('#game');
 const roundDisplay = document.getElementById('rounds');
 const computerResultDisplay = document.getElementById('computer-result');
@@ -87,19 +87,19 @@ for (let i = 0; i < choices.length; i++) {
 }
 let count = 5;
 const game = () => {
-  gameDisplay.onclick = () => {
+  gameDisplay.addEventListener = ('click', () => {
     count -= 1;
     if (count < 0) {
       count = 0;
     }
     for (let i = 0; i < choices.length; i++) {
-      if (choices[i].style.display === 'block') {
-        choices[i].style.display = 'none';
+      if (choices[i].style.display === 'none') {
+        choices[i].style.display = 'block';
       } else {
         choices[i].style.display = 'block';
       }
     }
     roundDisplay.innerHTML = `${count} Live`;
-  };
+  });
 };
 game();
