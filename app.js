@@ -15,6 +15,7 @@ let computerChoice;
 let result;
 let output;
 const score = [0, 0, 0];
+let noOfLive = 5;
 
 const generateComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * possibleChoice.length) + 1;
@@ -36,6 +37,7 @@ const generateWinnerDisplay = () => {
  || (userChoice === 'scissors' && computerChoice === 'paper')) {
     result = 'player win!';
     score[0]++;
+    noOfLive += 1;
   } else if ((userChoice === 'paper' && computerChoice === 'paper')
   || (userChoice === 'rock' && computerChoice === 'rock')
   || (userChoice === 'scissors' && computerChoice === 'scissors')) {
@@ -82,7 +84,6 @@ const playRound = () => {
   generateUserChoice();
 };
 
-let noOfLive = 5;
 const game = () => {
   playRound();
   gameDisplay.addEventListener('click', () => {
