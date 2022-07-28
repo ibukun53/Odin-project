@@ -92,7 +92,11 @@ const game = () => {
     playRound('call');
     roundDisplay.innerHTML = `${noOfLive} Live`;
     for (let i = 0; i < choices.length; i++) {
-      choices[i].classList.remove('hide');
+      if (choices[i].style.display === 'none') {
+        choices[i].style.display = 'block';
+      } else {
+        choices[i].style.display = 'none';
+      }
     }
   });
 };
