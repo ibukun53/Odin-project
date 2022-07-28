@@ -91,12 +91,9 @@ const game = () => {
     }
     playRound('call');
     roundDisplay.innerHTML = `${noOfLive} Live`;
-    gameDisplay.classList.remove('choice');
+    for (let i = 0; i < choices.length; i++) {
+      choices[i].classList.remove('hide');
+    }
   });
 };
-choices.forEach(possibleChoice => {
-  possibleChoice.addEventListener('click', () => {
-    possibleChoice.classList.add('choice');
-  });
-});
 game();
