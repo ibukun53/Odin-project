@@ -82,24 +82,21 @@ const playRound = () => {
   generateUserChoice();
 };
 playRound();
-for (let i = 0; i < choices.length; i++) {
-  choices[i].style.display = 'block';
-}
-let count = 5;
+let noOfLive = 5;
 const game = () => {
-  gameDisplay.addEventListener = ('click', () => {
-    count -= 1;
-    if (count < 0) {
-      count = 0;
+  gameDisplay.addEventListener('click', () => {
+    noOfLive -= 1;
+    if (noOfLive < 0) {
+      noOfLive = 0;
     }
-    for (let i = 0; i < choices.length; i++) {
-      if (choices[i].style.display === 'none') {
-        choices[i].style.display = 'block';
-      } else {
-        choices[i].style.display = 'block';
-      }
-    }
-    roundDisplay.innerHTML = `${count} Live`;
+    playRound('call');
+    roundDisplay.innerHTML = `${noOfLive} Live`;
+    gameDisplay.classList.remove('choice');
   });
 };
+choices.forEach(possibleChoice => {
+  possibleChoice.addEventListener('click', () => {
+    possibleChoice.classList.add('choice');
+  });
+});
 game();
