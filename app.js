@@ -89,7 +89,7 @@ const game = () => {
     if (noOfLive < 0) {
       noOfLive = 0;
     }
-    playRound('call');
+    playRound();
     roundDisplay.innerHTML = `${noOfLive} Live`;
     for (let i = 0; i < choices.length; i++) {
       if (choices[i].style.display === 'none') {
