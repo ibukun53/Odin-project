@@ -81,15 +81,15 @@ const generateUserChoice = () => {
 const playRound = () => {
   generateUserChoice();
 };
-playRound();
+
 let noOfLive = 5;
 const game = () => {
+  playRound();
   gameDisplay.addEventListener('click', () => {
     noOfLive -= 1;
     if (noOfLive < 0) {
       noOfLive = 0;
     }
-    playRound();
     roundDisplay.innerHTML = `${noOfLive} Live`;
     for (let i = 0; i < choices.length; i++) {
       if (choices[i].style.display === 'none') {
