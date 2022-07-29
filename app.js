@@ -16,6 +16,9 @@ let result;
 let output;
 const score = [0, 0, 0];
 let noOfLive = 5;
+const roundLives = () => {
+  roundDisplay.innerHTML = `${noOfLive} Live`;
+};
 
 const generateComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * possibleChoice.length) + 1;
@@ -37,7 +40,6 @@ const generateWinnerDisplay = () => {
  || (userChoice === 'scissors' && computerChoice === 'paper')) {
     result = 'player win!';
     score[0]++;
-    noOfLive += 1;
   } else if ((userChoice === 'paper' && computerChoice === 'paper')
   || (userChoice === 'rock' && computerChoice === 'rock')
   || (userChoice === 'scissors' && computerChoice === 'scissors')) {
@@ -48,6 +50,9 @@ const generateWinnerDisplay = () => {
      || (computerChoice === 'scissors' && userChoice === 'paper')) {
     result = 'computer win';
     score[1]++;
+    if (noOfLive > 0) {
+      noOfLive -= 1;
+    }
   } else {
     result = 'not supported';
   }
@@ -76,6 +81,7 @@ const generateUserChoice = () => {
     generateComputerChoice();
     generateWinnerDisplay();
     generateResultDisplay();
+    roundLives();
     userDisplayChoice.innerHTML = userChoice;
   }));
 };
@@ -83,22 +89,20 @@ const generateUserChoice = () => {
 const playRound = () => {
   generateUserChoice();
 };
-
 const game = () => {
   playRound();
   gameDisplay.addEventListener('click', () => {
-    noOfLive -= 1;
-    if (noOfLive < 0) {
-      noOfLive = 0;
-    }
-    roundDisplay.innerHTML = `${noOfLive} Live`;
     for (let i = 0; i < choices.length; i++) {
-      if (choices[i].style.display === 'none') {
-        choices[i].style.display = 'block';
-      } else {
+      if (choices[i].style.display === 'block') {
         choices[i].style.display = 'none';
       }
     }
   });
 };
+
+const wrapGame = () => {
+  possibleChoice.disabled = true;
+};
+
+wrapGame();
 game();

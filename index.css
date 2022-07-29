@@ -25,10 +25,6 @@ h1 {
   cursor: pointer;
 }
 
-#game.choices {
-  display: none;
-}
-
-.btn.choice {
+.choices {
   display: block;
 }
