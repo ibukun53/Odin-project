@@ -50,9 +50,7 @@ const generateWinnerDisplay = () => {
      || (computerChoice === 'scissors' && userChoice === 'paper')) {
     result = 'computer win';
     score[1]++;
-    if (noOfLive > 0) {
-      noOfLive -= 1;
-    }
+    noOfLive -= 1;
   } else {
     result = 'not supported';
   }
@@ -100,9 +98,4 @@ const game = () => {
   });
 };
 
-const wrapGame = () => {
-  possibleChoice.disabled = true;
-};
-
-wrapGame();
 game();
