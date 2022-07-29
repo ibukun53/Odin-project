@@ -17,6 +17,13 @@ let output;
 const score = [0, 0, 0];
 let noOfLive = 5;
 const roundLives = () => {
+  if (noOfLive <= 0 >= 1) {
+    for (let i = 0; i < possibleChoice.length; i++) {
+      possibleChoice[i].disabled = true;
+      const popUp = document.getElementById('mytxt');
+      popUp.classList.add('show');
+    }
+  }
   roundDisplay.innerHTML = `${noOfLive} Live`;
 };
 
@@ -74,17 +81,22 @@ const generateResultDisplay = () => {
   resultResultDisplay.innerHTML = output;
 };
 
+const game = () => {
+  gameDisplay.addEventListener('click', () => {
+    for (let i = 0; i < choices.length; i++) {
+      choices[i].classList.add('hide');
+    }
+  });
+};
+
 const generateUserChoice = () => {
   possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id;
-    if (noOfLive <= 0 >= 1) {
-      possibleChoice.disabled = true;
-      alert('GAME IS OVER');
-    }
     generateComputerChoice();
     generateWinnerDisplay();
     generateResultDisplay();
     roundLives();
+    game();
     userDisplayChoice.innerHTML = userChoice;
   }));
 };
@@ -93,13 +105,3 @@ const playRound = () => {
   generateUserChoice();
 };
 playRound();
-const game = () => {
-  gameDisplay.addEventListener('click', () => {
-    for (let i = 0; i < choices.length; i++) {
-      if (choices[i].style.display === 'block') {
-        choices[i].style.display = 'none';
-      }
-    }
-  });
-};
-game();

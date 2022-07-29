@@ -25,6 +25,24 @@ h1 {
   cursor: pointer;
 }
 
-.choices {
+.choice {
   display: block;
+}
+
+.choice .hide {
+  display: none;
+}
+
+.popup .text {
+  visibility: hidden;
+  z-index: 4;
+  padding: 8%;
+  margin: 16%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.popup .show {
+  visibility: visible;
 }
