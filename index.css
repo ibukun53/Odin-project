@@ -23,19 +23,20 @@ h1 {
   border-radius: 12px;
   color: white;
   cursor: pointer;
+  display: block;
+}
+
+#result .popup .choice .hide {
+  visibility: hidden;
 }
 
 .choice {
   display: block;
 }
 
-.choice .hide {
-  display: none;
-}
-
 .popup .text {
   visibility: hidden;
-  z-index: 4;
+  z-index: 1;
   padding: 8%;
   margin: 16%;
   background-color: black;
