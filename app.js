@@ -77,7 +77,7 @@ const generateResultDisplay = () => {
 const generateUserChoice = () => {
   possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id;
-    if (noOfLive <= 1 >= 1) {
+    if (noOfLive <= 0 >= 1) {
       possibleChoice.disabled = true;
       alert('GAME IS OVER');
     }
