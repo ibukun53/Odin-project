@@ -73,9 +73,14 @@ const generateResultDisplay = () => {
   }
   resultResultDisplay.innerHTML = output;
 };
+
 const generateUserChoice = () => {
   possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id;
+    if (noOfLive <= 1 >= 1) {
+      possibleChoice.disabled = true;
+      alert('GAME IS OVER');
+    }
     generateComputerChoice();
     generateWinnerDisplay();
     generateResultDisplay();
@@ -87,8 +92,8 @@ const generateUserChoice = () => {
 const playRound = () => {
   generateUserChoice();
 };
+playRound();
 const game = () => {
-  playRound();
   gameDisplay.addEventListener('click', () => {
     for (let i = 0; i < choices.length; i++) {
       if (choices[i].style.display === 'block') {
@@ -97,5 +102,4 @@ const game = () => {
     }
   });
 };
-
 game();
