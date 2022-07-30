@@ -3,14 +3,14 @@ const computerDisplayChoice = document.getElementById('computer-choice');
 const userDisplayChoice = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
 const possibleChoice = document.querySelectorAll('.btn');
-const gameDisplay = document.querySelector('#game');
+const gameDisplay = document.getElementById('game');
 const choices = document.querySelectorAll('.choice');
 const roundDisplay = document.getElementById('rounds');
 const computerResultDisplay = document.getElementById('computer-result');
 const userResultDisplay = document.getElementById('player-result');
 const drawResultDisplay = document.getElementById('draw-result');
 const resultResultDisplay = document.getElementById('team-result');
-const popUp = document.getElementById('mytxt');
+const popUp = document.querySelector('.popup');
 let userChoice;
 let computerChoice;
 let result;
@@ -28,22 +28,29 @@ const roundLives = () => {
 };
 
 gameDisplay.addEventListener('click', () => {
-  if (noOfLive <= 0 >= 1) {
+  if (noOfLive === 0) {
     noOfLive = 5;
+    popUp.classList.add('hide');
+    for (let i = 0; i < possibleChoice.length; i++) {
+      possibleChoice[i].disabled = false;
+    }
+    for (let i = 0; i < choices.length; i++) {
+      choices[i].style.display = 'none';
+    }
+    userResultDisplay.style.display = 'none';
+    computerResultDisplay.style.display = 'none';
+    drawResultDisplay.style.display = 'none';
+    resultResultDisplay.style.display = 'none';
   }
-  popUp.classList.add('hide');
-  for (let i = 0; i < possibleChoice.length; i++) {
-    possibleChoice[i].disabled = false;
-  }
-
-  for (let i = 0; i < choices.length; i++) {
-    choices[i].style.display = 'none';
-  }
-  userResultDisplay.style.display = 'none';
-  computerResultDisplay.style.display = 'none';
-  drawResultDisplay.style.display = 'none';
-  resultResultDisplay.style.display = 'none';
 });
+
+for (let i = 0; i < choices.length; i++) {
+  choices[i].style.display = 'block';
+}
+computerResultDisplay.style.display = 'block';
+drawResultDisplay.style.display = 'block';
+resultResultDisplay.style.display = 'block';
+userResultDisplay.style.display = 'block';
 
 const generateComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * possibleChoice.length) + 1;

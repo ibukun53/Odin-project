@@ -16,35 +16,36 @@ h1 {
   font-size: 30px;
 }
 
-#game {
-  padding: 5px;
-  margin: 29px;
-  background-color: black;
-  border-radius: 12px;
-  color: white;
-  cursor: pointer;
-  display: block;
-}
-
 .choice {
   display: block;
 }
 
-.popup .text {
+.popup {
   visibility: hidden;
-  z-index: 1;
-  padding: 8%;
-  margin: 16%;
-  background-color: black;
+  z-index: -1;
+  padding: 2px;
+  margin: 4%;
+  background-color: rgb(154, 173, 126);
   color: white;
   text-align: center;
 }
 
-.popup .show {
+.popup #game {
+  padding: 5px;
+  z-index: -3;
+  background-color: black;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  margin: 2px 45%;
+}
+
+.up .show {
   visibility: visible;
 }
 
-.popup .hide {
+.up .hide {
   visibility: hidden;
 }
 
