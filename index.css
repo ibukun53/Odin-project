@@ -26,10 +26,6 @@ h1 {
   display: block;
 }
 
-#result .popup .choice .hide {
-  visibility: hidden;
-}
-
 .choice {
   display: block;
 }
@@ -46,4 +42,12 @@ h1 {
 
 .popup .show {
   visibility: visible;
+}
+
+.popup .hide {
+  visibility: hidden;
+}
+
+.choice .hide {
+  display: block;
 }

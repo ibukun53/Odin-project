@@ -4,12 +4,13 @@ const userDisplayChoice = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
 const possibleChoice = document.querySelectorAll('.btn');
 const gameDisplay = document.querySelector('#game');
-const choices = document.querySelectorAll('.choices');
+const choices = document.querySelectorAll('.choice');
 const roundDisplay = document.getElementById('rounds');
 const computerResultDisplay = document.getElementById('computer-result');
 const userResultDisplay = document.getElementById('player-result');
 const drawResultDisplay = document.getElementById('draw-result');
 const resultResultDisplay = document.getElementById('team-result');
+const popUp = document.getElementById('mytxt');
 let userChoice;
 let computerChoice;
 let result;
@@ -20,17 +21,29 @@ const roundLives = () => {
   if (noOfLive <= 0 >= 1) {
     for (let i = 0; i < possibleChoice.length; i++) {
       possibleChoice[i].disabled = true;
-      const popUp = document.getElementById('mytxt');
       popUp.classList.add('show');
-      gameDisplay.addEventListener('click', () => {
-        for (let i = 0; i < choices.length; i++) {
-          resultDisplay.choices[i].popUp.classList.remove('hide');
-        }
-      });
     }
   }
   roundDisplay.innerHTML = `${noOfLive} Live`;
 };
+
+gameDisplay.addEventListener('click', () => {
+  if (noOfLive <= 0 >= 1) {
+    noOfLive = 5;
+  }
+  popUp.classList.add('hide');
+  for (let i = 0; i < possibleChoice.length; i++) {
+    possibleChoice[i].disabled = false;
+  }
+
+  for (let i = 0; i < choices.length; i++) {
+    choices[i].style.display = 'none';
+  }
+  userResultDisplay.style.display = 'none';
+  computerResultDisplay.style.display = 'none';
+  drawResultDisplay.style.display = 'none';
+  resultResultDisplay.style.display = 'none';
+});
 
 const generateComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * possibleChoice.length) + 1;
