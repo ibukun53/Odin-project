@@ -52,3 +52,19 @@ h1 {
 .choice .hide {
   display: block;
 }
+
+#rounds {
+  margin: -10px;
+  background: rgb(154, 173, 126);
+  width: 10%;
+  padding: 10px;
+}
+
+.btn {
+  margin: 6%;
+  background: rgb(36, 37, 35);
+  width: 20%;
+  padding: 8%;
+  color: white;
+  border-radius: 5px;
+}

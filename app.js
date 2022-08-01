@@ -10,14 +10,16 @@ const userResultDisplay = document.getElementById('player-result');
 const drawResultDisplay = document.getElementById('draw-result');
 const resultResultDisplay = document.getElementById('team-result');
 const popUp = document.querySelector('.popup');
+
 let userChoice;
 let computerChoice;
 let result;
 let output;
-const score = [0, 0, 0];
+
+let score = [0, 0, 0];
 let noOfLive = 5;
 const roundLives = () => {
-  if (noOfLive <= 0 >= 1) {
+  if (noOfLive <= 0) {
     for (let i = 0; i < possibleChoice.length; i++) {
       possibleChoice[i].disabled = true;
       popUp.classList.add('show');
@@ -29,19 +31,22 @@ const roundLives = () => {
 gameDisplay.addEventListener('click', () => {
   if (noOfLive === 0) {
     noOfLive = 5;
-
     for (let i = 0; i < possibleChoice.length; i++) {
       possibleChoice[i].disabled = false;
       popUp.classList.add('hide');
     }
+
+    // eslint-disable-next-line no-sequences
+    score = [0];
+    score = [0, 0, 0];
     resultDisplay.innerHTML = '';
     roundDisplay.innerHTML = `${noOfLive} Live`;
     computerDisplayChoice.innerHTML = '';
     userDisplayChoice.innerHTML = '';
     resultResultDisplay.innerHTML = '';
-    userResultDisplay.innerHTML = '';
-    computerResultDisplay.innerHTML = '';
-    drawResultDisplay.innerHTML = '';
+    userResultDisplay.innerHTML = score;
+    computerResultDisplay.innerHTML = score;
+    drawResultDisplay.innerHTML = score;
   }
 });
 
