@@ -111,7 +111,7 @@ h1 {
 .teams {
   display: flex;
   margin: 5%;
-  font-size: 27px;
+  font-size: 20px;
 }
 
 #choice-team {
@@ -121,6 +121,7 @@ h1 {
 #result-team {
   margin-left: 36%;
   margin-bottom: 5%;
+  font-size: 30px;
 }
 
 .table-team {
@@ -150,7 +151,7 @@ tr:nth-child(even) { background-color: #f2f2f2; }
     height: 16%;
     margin-top: 6px;
     margin-right: 9%;
-    margin-left: 16%;
+    margin-left: 0.2%;
     border-radius: 5px;
   }
 
@@ -163,6 +164,7 @@ tr:nth-child(even) { background-color: #f2f2f2; }
     margin-left: 29%;
     margin-bottom: 8%;
     margin-top: 15%;
+    font-size: 27px;
   }
 
   .item-container {
@@ -172,7 +174,7 @@ tr:nth-child(even) { background-color: #f2f2f2; }
   .teams {
     display: flex;
     margin-top: 5%;
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .table-team {
