@@ -14,20 +14,35 @@
         <title>My portfolio website</title>
       </head>
       <body>
-        <div id="rounds">5 Lives</div>
-        <button type="button" class="btn" id="rock">Rock</button>
-        <button type="button" class="btn" id="scissors">Scissors</button>
-        <button type="button" class="btn" id="paper">Paper</button>
-        <h2>YourChoice: <span class="choice" id="your-choice"></span></h2>
-        <h2>ComputerChoice: <span class="choice" id="computer-choice"></span></h2>
-        <h2>Result: <span class="choice" id="result"></span></h2>
+        <div class="container">
+          <div class="item-container">
+            <h2 class="item">Rock</h2>
+            <h2 class="item">Scissors</h2>
+            <h2 class="item">Paper</h2>
+          </div>
+          <span id="rounds">5 Lives</span>
+        </div>
+        <div class="btn-container">
+          <image src="image/paper.jpg" class="btn" id="paper" alt="paper"></image>
+          <image src="image/scissors.jpg" class="btn" id="scissors" alt="scissors"></image>
+          <image src="image/rock.jpg" class="btn" id="rock" alt="rock"></image>
+        </div>
+        <div class="teams">
+          <h2 id="choice-team">
+            player play <br /><br /><span class="choice" id="your-choice"></span>
+          </h2>
+          <h2 id="choice-team" class="computer-choice">
+            computer play <br /><br /><span class="choice" id="computer-choice"></span>
+          </h2>
+        </div>
+        <h2 id="result-team"><span class="choice" id="result"></span></h2>
         <div class="up">
           <div class="popup">
             <span class="text" id="mytxt">GAME IS OVER</span>
-            <button type="button" onclick="button()" id="game">Retry</button>
+            <button type="button" id="game">Retry</button>
           </div>
         </div>
-        <table>
+        <table class="table-team">
           <tr>
             <th>Team</th>
             <th>Scores</th>

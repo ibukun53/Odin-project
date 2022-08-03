@@ -1,11 +1,11 @@
 body {
-  background-color: rgb(118, 118, 150);
+  background-color: rgb(201, 198, 196);
 }
 
 table,
 th,
 td {
-  border: 1px solid black;
+  border: 1px solid rgb(231, 146, 88);
 }
 
 table {
@@ -16,18 +16,21 @@ h1 {
   font-size: 30px;
 }
 
-.choice {
-  display: block;
-}
-
 .popup {
   visibility: hidden;
   z-index: -1;
-  padding: 2px;
-  margin: 4%;
-  background-color: rgb(154, 173, 126);
+  padding: 15px;
+  background-color: rgb(226, 169, 131);
   color: white;
   text-align: center;
+}
+
+.container {
+  margin: -5px 40% 2% 40%;
+  border: solid 2px;
+  background-color: rgb(224, 212, 203);
+  left: 0;
+  display: flex;
 }
 
 .popup #game {
@@ -54,17 +57,90 @@ h1 {
 }
 
 #rounds {
-  margin: -10px;
-  background: rgb(154, 173, 126);
-  width: 10%;
-  padding: 10px;
+  background: rgb(223, 151, 118);
+  padding: 13px;
+  height: 5%;
+  margin-left: 30%;
+}
+
+.item-container {
+  line-height: 5px;
+  text-align: center;
+  margin-left: 40px;
 }
 
 .btn {
-  margin: 6%;
-  background: rgb(36, 37, 35);
+  width: 15%;
+  background: rgb(223, 151, 118);
+  padding: 2% 2% 2% 2%;
+  border-radius: 5%;
+  margin-left: 10%;
+}
+
+.btn-container {
+  padding: 0 20px 0 5px;
+  display: flex;
+}
+
+.choice {
   width: 20%;
-  padding: 8%;
-  color: white;
-  border-radius: 5px;
+  background: rgb(224, 196, 174);
+  padding: 6% 2% 6% 2%;
+  color: rgb(29, 5, 5);
+  border-radius: 65%;
+  border: solid 5px rgb(163, 140, 131);
+  margin-left: 9%;
+}
+
+.teams {
+  display: flex;
+  margin: 2%;
+}
+
+#choice-team {
+  margin: auto;
+}
+
+#result-team {
+  margin-left: 36%;
+  margin-bottom: 5%;
+}
+
+.table-team {
+  margin: auto;
+  width: 80%;
+  background-color: rgb(212, 144, 88);
+  color: black;
+}
+tr:nth-child(even) { background-color: #f2f2f2; }
+
+@media only screen and (max-width: 500px) {
+  #choice-team {
+    margin-left: 12%;
+  }
+
+  #result-team {
+    margin-left: 28%;
+    margin-bottom: 5%;
+  }
+
+  #rounds {
+    background: rgb(154, 173, 126);
+    width: 20%;
+    padding: 15px;
+    height: 5%;
+    margin-left: 15%;
+  }
+
+  .container {
+    margin: -5px 20% 2% 45px;
+    border: solid 2px;
+    background-color: rgb(224, 212, 203);
+    left: 0;
+    display: flex;
+  }
+
+  .item-container {
+    line-height: 5px;
+  }
 }
