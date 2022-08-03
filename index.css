@@ -71,7 +71,7 @@ h1 {
   height: 16%;
   margin-top: 6px;
   margin-right: 9%;
-  margin-left: 47%;
+  margin-left: 28%;
   margin-bottom: 2%;
   border-radius: 5px;
   font-size: 20px;
@@ -126,7 +126,7 @@ h1 {
 
 .table-team {
   margin: auto;
-  width: 40%;
+  width: 50%;
   background-color: rgb(223, 151, 118);
   color: black;
   font-size: 20px;
@@ -135,7 +135,7 @@ tr:nth-child(even) { background-color: #f2f2f2; }
 
 @media only screen and (max-width: 765px) {
   .container {
-    margin: 25%;
+    margin: 20%;
     margin-top: 10px;
     margin-bottom: 25px;
     border: solid 2px;
@@ -151,7 +151,7 @@ tr:nth-child(even) { background-color: #f2f2f2; }
     height: 16%;
     margin-top: 6px;
     margin-right: 9%;
-    margin-left: 0.2%;
+    margin-left: 8%;
     border-radius: 5px;
   }
 
@@ -164,7 +164,7 @@ tr:nth-child(even) { background-color: #f2f2f2; }
     margin-left: 29%;
     margin-bottom: 8%;
     margin-top: 15%;
-    font-size: 27px;
+    font-size: 22px;
   }
 
   .item-container {
@@ -179,7 +179,7 @@ tr:nth-child(even) { background-color: #f2f2f2; }
 
   .table-team {
     margin: auto;
-    width: 60%;
+    width: 70%;
   }
 
   .popup #game {
