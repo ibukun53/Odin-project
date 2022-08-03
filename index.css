@@ -65,22 +65,24 @@ h1 {
 }
 
 #rounds {
-  background: rgb(223, 151, 118);
+  background: #fff;
   width: 50px;
   padding: 9%;
   height: 16%;
   margin-top: 6px;
   margin-right: 9%;
-  margin-left: 15%;
+  margin-left: 12%;
   margin-bottom: 2%;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 30px;
+  color: rgb(223, 151, 118);
 }
 
 .item-container {
-  line-height: 10px;
-  font-size: 20px;
+  line-height: 15px;
+  font-size: 17px;
   margin-left: 10px;
+  color: #fff;
 }
 
 .btn {
@@ -145,7 +147,6 @@ tr:nth-child(even) { background-color: #f2f2f2; }
   }
 
   #rounds {
-    background: rgb(223, 151, 118);
     width: 50px;
     padding: 9%;
     height: 16%;

@@ -24,7 +24,7 @@ const roundLives = () => {
       popUp.classList.add('show');
     }
   }
-  roundDisplay.innerHTML = `${noOfLive} Live`;
+  roundDisplay.innerHTML = `Live ${noOfLive}`;
 };
 
 gameDisplay.addEventListener('click', () => {
