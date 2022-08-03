@@ -69,17 +69,17 @@ const generateWinnerDisplay = () => {
  || (userChoice === 'rock' && computerChoice === 'scissors')
  || (userChoice === 'scissors' && computerChoice === 'paper')) {
     result = 'player win!';
-    score[0]++;
+    score[0] += 1;
   } else if ((userChoice === 'paper' && computerChoice === 'paper')
   || (userChoice === 'rock' && computerChoice === 'rock')
   || (userChoice === 'scissors' && computerChoice === 'scissors')) {
     result = 'draw!';
-    score[2]++;
+    score[2] += 1;
   } else if ((computerChoice === 'paper' && userChoice === 'rock')
      || (computerChoice === 'rock' && userChoice === 'scissors')
      || (computerChoice === 'scissors' && userChoice === 'paper')) {
-    result = 'computer win';
-    score[1]++;
+    result = 'computer win!';
+    score[1] += 1;
     noOfLive -= 1;
   } else {
     result = 'not supported';
