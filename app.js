@@ -1,4 +1,3 @@
-/* eslint-disable no-plusplus */
 const computerDisplayChoice = document.getElementById('computer-choice');
 const userDisplayChoice = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
@@ -20,8 +19,8 @@ let score = [0, 0, 0];
 let noOfLive = 5;
 const roundLives = () => {
   if (noOfLive <= 0) {
-    for (let i = 0; i < possibleChoice.length; i++) {
-      possibleChoice[i].disabled = true;
+    for (let i = 0; i < possibleChoice.length; i += 1) {
+      possibleChoice[i].style.pointerEvents = 'none';
       popUp.classList.add('show');
     }
   }
@@ -31,12 +30,11 @@ const roundLives = () => {
 gameDisplay.addEventListener('click', () => {
   if (noOfLive === 0) {
     noOfLive = 5;
-    for (let i = 0; i < possibleChoice.length; i++) {
-      possibleChoice[i].disabled = false;
+    for (let i = 0; i < possibleChoice.length; i += 1) {
+      possibleChoice[i].style.pointerEvents = 'auto';
       popUp.classList.add('hide');
     }
 
-    // eslint-disable-next-line no-sequences
     score = [0];
     score = [0, 0, 0];
     resultDisplay.innerHTML = '';
