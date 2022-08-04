@@ -2,14 +2,14 @@ const computerDisplayChoice = document.getElementById('computer-choice');
 const userDisplayChoice = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
 const possibleChoice = document.querySelectorAll('.btn');
-const gameDisplay = document.getElementById('game');
-const roundDisplay = document.getElementById('rounds');
+const gameDisplay = document.querySelector('.game');
+const roundDisplay = document.querySelector('.rounds');
 const computerResultDisplay = document.getElementById('computer-result');
 const userResultDisplay = document.getElementById('player-result');
 const drawResultDisplay = document.getElementById('draw-result');
 const resultResultDisplay = document.getElementById('team-result');
 const popUp = document.querySelector('.popup');
-const popupResult = document.querySelector('.result-team');
+const popupResult = document.querySelector('.resultTeam');
 let userChoice;
 let computerChoice;
 let result;
@@ -21,8 +21,8 @@ const roundLives = () => {
   if (noOfLive <= 0) {
     for (let i = 0; i < possibleChoice.length; i += 1) {
       possibleChoice[i].style.pointerEvents = 'none';
-      popUp.classList.add('show');
     }
+    popUp.classList.remove('hidden');
   }
   roundDisplay.innerHTML = `Live ${noOfLive}`;
 };
@@ -32,10 +32,9 @@ gameDisplay.addEventListener('click', () => {
     noOfLive = 5;
     for (let i = 0; i < possibleChoice.length; i += 1) {
       possibleChoice[i].style.pointerEvents = 'auto';
-      popUp.classList.add('hide');
     }
+    popUp.classList.add('hidden');
 
-    score = [0];
     score = [0, 0, 0];
     resultDisplay.innerHTML = '';
     roundDisplay.innerHTML = `${noOfLive} Live`;

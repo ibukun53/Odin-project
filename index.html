@@ -20,7 +20,7 @@
             <h2 class="item">SCISSORS</h2>
             <h2 class="item">PAPER</h2>
           </div>
-          <span id="rounds">Live 5</span>
+          <span class="rounds">Live 5</span>
         </div>
         <div class="btn-container">
           <image src="image/paper.jpg" class="btn" id="paper" alt="paper"></image>
@@ -28,14 +28,14 @@
           <image src="image/rock.jpg" class="btn" id="rock" alt="rock"></image>
         </div>
         <div class="teams">
-          <h2 id="choice-team">
+          <h2 class="choice-team">
             player played <br /><br /><span class="choice" id="your-choice"></span>
           </h2>
-          <h2 id="choice-team" class="computer-choice">
+          <h2 class="choice-team">
             computer played <br /><br /><span class="choice" id="computer-choice"></span>
           </h2>
         </div>
-        <h2 id="result-team">result<span class="choice" id="result"></span></h2>
+        <h2 class="result-team">result<span class="choice" id="result"></span></h2>
 
         <table class="table-team">
           <tr>
@@ -61,13 +61,12 @@
         </table>
 
         <div class="up">
-          <div class="popup">
-            <span class="text" id="mytxt">GAME IS OVER</span>
-            <p class="result-team"></p>
-            <button type="button" id="game">Retry</button>
+          <div class="popup hidden">
+            <span class="mytxt">GAME IS OVER</span>
+            <p class="resultTeam"></p>
+            <button type="button" class="game">Retry</button>
           </div>
         </div>
-
         <script src="app.js"></script>
       </body>
     </html>

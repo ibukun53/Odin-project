@@ -17,7 +17,6 @@ h1 {
 }
 
 .popup {
-  visibility: hidden;
   z-index: 1;
   width: 80%;
   height: 80%;
@@ -30,20 +29,20 @@ h1 {
   margin: 10%;
   position: absolute;
   opacity: 0.8;
-  padding-top: 200px;
+  padding-top: 170px;
 }
 
 .container {
   margin: 34%;
   margin-top: 10px;
   margin-bottom: 5%;
-  border: solid 2px rgb(163, 140, 131);
+  border: solid 2px rgb(177, 139, 124);
   background-color: rgb(224, 212, 203);
   left: 0;
   display: flex;
 }
 
-.popup #game {
+.game {
   padding: 19px;
   z-index: -3;
   background-color: black;
@@ -54,36 +53,24 @@ h1 {
   margin: 2px 44%;
 }
 
-#mytxt {
-  font-size: 50px;
-  color: black;
-}
-
-.result-team {
+.mytxt {
   font-size: 40px;
   color: black;
 }
 
-.up .show {
-  visibility: visible;
+.resultTeam {
+  font-size: 40px;
+  color: black;
 }
 
-.up .hide {
-  visibility: hidden;
-}
-
-.choice .hide {
-  display: block;
-}
-
-#rounds {
+.rounds {
   background: #fff;
   width: 50px;
   padding: 9%;
   height: 16%;
   margin-top: 6px;
   margin-right: 9%;
-  margin-left: 10%;
+  margin-left: 32%;
   margin-bottom: 2%;
   border-radius: 5px;
   font-size: 30px;
@@ -94,15 +81,16 @@ h1 {
   line-height: 20px;
   font-size: 17px;
   margin-left: 10px;
-  color: #fff;
+  color: black;
 }
 
 .btn {
-  width: 15%;
+  width: 150px;
+  height: 150px;
   background: rgb(223, 151, 118);
   padding: 2% 2% 2% 2%;
   border-radius: 5%;
-  margin-left: 10%;
+  margin-left: 12%;
 }
 
 .btn-container {
@@ -115,11 +103,11 @@ h1 {
 .choice {
   width: 20%;
   background: rgb(224, 196, 174);
-  padding: 6% 2% 6% 2%;
+  padding: 8% 8% 8% 8%;
   color: rgb(29, 5, 5);
   border-radius: 65%;
   border: solid 5px rgb(163, 140, 131);
-  margin-left: 9%;
+  margin-left: 5%;
 }
 
 .teams {
@@ -128,13 +116,13 @@ h1 {
   font-size: 20px;
 }
 
-#choice-team {
+.choice-team {
   margin: auto;
 }
 
-#result-team {
+.result-team {
   margin-left: 36%;
-  margin-bottom: 5%;
+  margin-bottom: 7%;
   font-size: 30px;
 }
 
@@ -144,8 +132,13 @@ h1 {
   background-color: rgb(223, 151, 118);
   color: black;
   font-size: 20px;
+  margin-bottom: 10%;
 }
 tr:nth-child(even) { background-color: #f2f2f2; }
+
+.hidden {
+  display: none;
+}
 
 @media only screen and (max-width: 765px) {
   .container {
@@ -158,22 +151,28 @@ tr:nth-child(even) { background-color: #f2f2f2; }
     display: flex;
   }
 
-  #rounds {
+  .rounds {
     width: 50px;
     padding: 9%;
     height: 16%;
     margin-top: 6px;
     margin-right: 7%;
-    margin-left: 8%;
+    margin-left: 17%;
     border-radius: 5px;
   }
 
-  #choice-team {
+  .choice-team {
     margin-left: 14%;
     margin-top: 1%;
   }
 
-  #result-team {
+  .btn {
+    width: 100px;
+    height: 100px;
+    margin-left: 7%;
+  }
+
+  .result-team {
     margin-left: 29%;
     margin-bottom: 8%;
     margin-top: 15%;
@@ -181,7 +180,7 @@ tr:nth-child(even) { background-color: #f2f2f2; }
   }
 
   .item-container {
-    line-height: 20px;
+    line-height: 22px;
   }
 
   .teams {
@@ -193,38 +192,58 @@ tr:nth-child(even) { background-color: #f2f2f2; }
   .table-team {
     margin: auto;
     width: 70%;
+    margin-bottom: 10%;
   }
 
-  .popup #game {
+  .game {
     padding: 9px;
     margin: 2px 45%;
+  }
+
+  .popup {
+    padding-top: 100px;
   }
 }
 
 @media only screen and (max-width: 500px) {
   .container {
-    margin: 10%;
+    margin-left: 17%;
   }
 
-  #choice-team {
+  .rounds {
+    margin-left: 10%;
+  }
+
+  .choice-team {
     margin-left: 7%;
     margin-top: 1%;
   }
 
-  #result-team {
+  .result-team {
     font-size: 14px;
   }
 
   .item-container {
-    line-height: 5px;
+    line-height: 20px;
   }
 
   .teams {
     font-size: 17px;
   }
 
+  .btn {
+    width: 70px;
+    height: 70px;
+    margin-left: 10%;
+  }
+
   .table-team {
     margin: auto;
     width: 70%;
+    margin-bottom: 10%;
+  }
+
+  .popup {
+    padding-top: 120px;
   }
 }
