@@ -20,18 +20,12 @@
             <h2 class="item">SCISSORS</h2>
             <h2 class="item">PAPER</h2>
           </div>
-          <span id="rounds"> Live 5</span>
+          <span id="rounds">Live 5</span>
         </div>
         <div class="btn-container">
           <image src="image/paper.jpg" class="btn" id="paper" alt="paper"></image>
           <image src="image/scissors.jpg" class="btn" id="scissors" alt="scissors"></image>
           <image src="image/rock.jpg" class="btn" id="rock" alt="rock"></image>
-        </div>
-        <div class="up">
-          <div class="popup">
-            <span class="text" id="mytxt">GAME IS OVER</span>
-            <button type="button" id="game">Retry</button>
-          </div>
         </div>
         <div class="teams">
           <h2 id="choice-team">
@@ -65,6 +59,14 @@
             <td id="team-result"></td>
           </tr>
         </table>
+
+        <div class="up">
+          <div class="popup">
+            <span class="text" id="mytxt">GAME IS OVER</span>
+            <p class="result-team"></p>
+            <button type="button" id="game">Retry</button>
+          </div>
+        </div>
 
         <script src="app.js"></script>
       </body>

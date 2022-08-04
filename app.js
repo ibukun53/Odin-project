@@ -9,7 +9,7 @@ const userResultDisplay = document.getElementById('player-result');
 const drawResultDisplay = document.getElementById('draw-result');
 const resultResultDisplay = document.getElementById('team-result');
 const popUp = document.querySelector('.popup');
-
+const popupResult = document.querySelector('.result-team');
 let userChoice;
 let computerChoice;
 let result;
@@ -90,16 +90,17 @@ const generateWinnerDisplay = () => {
 const generateResultDisplay = () => {
   if ((score[0] > score[1]
   || score[0] > score[1])) {
-    output = 'Player win';
+    output = 'Player won!';
   } else if ((score[1] > score[0])) {
-    output = 'Computer win';
+    output = 'Computer won!';
   } else if ((score[1] === score[0]
     || score[0] === score[1])) {
-    output = 'Draw';
+    output = 'Draw!';
   } else {
     output = 'No win';
   }
   resultResultDisplay.innerHTML = output;
+  popupResult.innerHTML = output;
 };
 
 const generateUserChoice = () => {
