@@ -14,8 +14,8 @@ let userChoice;
 let computerChoice;
 let result;
 let output;
-
 let score = [0, 0, 0];
+
 let noOfLive = 5;
 const roundLives = () => {
   if (noOfLive <= 0) {
@@ -34,16 +34,15 @@ gameDisplay.addEventListener('click', () => {
       possibleChoice[i].style.pointerEvents = 'auto';
     }
     popUp.classList.add('hidden');
-
     score = [0, 0, 0];
     resultDisplay.innerHTML = '';
     roundDisplay.innerHTML = `${noOfLive} Live`;
     computerDisplayChoice.innerHTML = '';
     userDisplayChoice.innerHTML = '';
     resultResultDisplay.innerHTML = '';
-    userResultDisplay.innerHTML = score;
-    computerResultDisplay.innerHTML = score;
-    drawResultDisplay.innerHTML = score;
+    userResultDisplay.innerHTML = 'score[0]';
+    computerResultDisplay.innerHTML = 'score[1]';
+    drawResultDisplay.innerHTML = 'score[2]';
   }
 });
 
