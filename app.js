@@ -40,9 +40,9 @@ gameDisplay.addEventListener('click', () => {
     computerDisplayChoice.innerHTML = '';
     userDisplayChoice.innerHTML = '';
     resultResultDisplay.innerHTML = '';
-    userResultDisplay.innerHTML = 'score[0]';
-    computerResultDisplay.innerHTML = 'score[1]';
-    drawResultDisplay.innerHTML = 'score[2]';
+    userResultDisplay.innerHTML = `${score[0]}`;
+    computerResultDisplay.innerHTML = `${score[1]}`;
+    drawResultDisplay.innerHTML = `${score[2]}`;
   }
 });
 

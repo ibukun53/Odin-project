@@ -213,7 +213,7 @@ tr:nth-child(even) { background-color: #f2f2f2; }
   }
 
   .choice {
-    width: 30%;
+    padding-top: 17%;
   }
 
   .rounds {
@@ -236,8 +236,8 @@ tr:nth-child(even) { background-color: #f2f2f2; }
 
   .result-team {
     margin-left: 29%;
-    margin-bottom: 12%;
-    margin-top: 15%;
+    margin-bottom: 40%;
+    margin-top: 35%;
     font-size: 22px;
   }
 
