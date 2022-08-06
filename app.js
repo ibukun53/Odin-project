@@ -15,7 +15,6 @@ let computerChoice;
 let result;
 let output;
 let score = [0, 0, 0];
-
 let noOfLive = 5;
 const roundLives = () => {
   if (noOfLive <= 0) {
@@ -26,25 +25,6 @@ const roundLives = () => {
   }
   roundDisplay.innerHTML = `Live ${noOfLive}`;
 };
-
-gameDisplay.addEventListener('click', () => {
-  if (noOfLive === 0) {
-    noOfLive = 5;
-    for (let i = 0; i < possibleChoice.length; i += 1) {
-      possibleChoice[i].style.pointerEvents = 'auto';
-    }
-    popUp.classList.add('hidden');
-    score = [0, 0, 0];
-    resultDisplay.innerHTML = '';
-    roundDisplay.innerHTML = `${noOfLive} Live`;
-    computerDisplayChoice.innerHTML = '';
-    userDisplayChoice.innerHTML = '';
-    resultResultDisplay.innerHTML = '';
-    userResultDisplay.innerHTML = `${score[0]}`;
-    computerResultDisplay.innerHTML = `${score[1]}`;
-    drawResultDisplay.innerHTML = `${score[2]}`;
-  }
-});
 
 const generateComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * possibleChoice.length) + 1;
@@ -58,6 +38,22 @@ const generateComputerChoice = () => {
     computerChoice = '';
   }
   computerDisplayChoice.innerHTML = computerChoice;
+};
+
+const generateResultDisplay = () => {
+  if ((score[0] > score[1]
+  || score[0] > score[1])) {
+    output = 'Player won!';
+  } else if ((score[1] > score[0])) {
+    output = 'Computer won!';
+  } else if ((score[1] === score[0]
+    || score[0] === score[1])) {
+    output = 'Draw!';
+  } else {
+    output = 'No win';
+  }
+  resultResultDisplay.innerHTML = output;
+  popupResult.innerHTML = output;
 };
 
 const generateWinnerDisplay = () => {
@@ -85,21 +81,25 @@ const generateWinnerDisplay = () => {
   drawResultDisplay.innerHTML = `${score[2]}`;
   resultDisplay.innerHTML = result;
 };
-const generateResultDisplay = () => {
-  if ((score[0] > score[1]
-  || score[0] > score[1])) {
-    output = 'Player won!';
-  } else if ((score[1] > score[0])) {
-    output = 'Computer won!';
-  } else if ((score[1] === score[0]
-    || score[0] === score[1])) {
-    output = 'Draw!';
-  } else {
-    output = 'No win';
+
+gameDisplay.addEventListener('click', () => {
+  if (noOfLive === 0) {
+    noOfLive = 5;
+    for (let i = 0; i < possibleChoice.length; i += 1) {
+      possibleChoice[i].style.pointerEvents = 'auto';
+    }
+    popUp.classList.add('hidden');
+    score = [0, 0, 0];
+    resultDisplay.innerHTML = '';
+    roundDisplay.innerHTML = `${noOfLive} Live`;
+    computerDisplayChoice.innerHTML = '';
+    userDisplayChoice.innerHTML = '';
+    resultResultDisplay.innerHTML = '';
+    userResultDisplay.innerHTML = `${score[0]}`;
+    computerResultDisplay.innerHTML = `${score[1]}`;
+    drawResultDisplay.innerHTML = `${score[2]}`;
   }
-  resultResultDisplay.innerHTML = output;
-  popupResult.innerHTML = output;
-};
+});
 
 const generateUserChoice = () => {
   possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
@@ -111,8 +111,4 @@ const generateUserChoice = () => {
     userDisplayChoice.innerHTML = userChoice;
   }));
 };
-
-const playRound = () => {
-  generateUserChoice();
-};
-playRound();
+generateUserChoice();
