@@ -23,7 +23,7 @@ const roundLives = () => {
     }
     popUp.classList.remove('hidden');
   }
-  roundDisplay.innerHTML = `Live ${noOfLive}`;
+  roundDisplay.textContent = `Live ${noOfLive}`;
 };
 
 const generateComputerChoice = () => {
@@ -37,7 +37,7 @@ const generateComputerChoice = () => {
   } else {
     computerChoice = '';
   }
-  computerDisplayChoice.innerHTML = computerChoice;
+  computerDisplayChoice.textContent = computerChoice;
 };
 
 const generateResultDisplay = () => {
@@ -52,8 +52,8 @@ const generateResultDisplay = () => {
   } else {
     output = 'No win';
   }
-  resultResultDisplay.innerHTML = output;
-  popupResult.innerHTML = output;
+  resultResultDisplay.textContent = output;
+  popupResult.textContent = output;
 };
 
 const generateWinnerDisplay = () => {
@@ -76,10 +76,10 @@ const generateWinnerDisplay = () => {
   } else {
     result = 'not supported';
   }
-  userResultDisplay.innerHTML = `${score[0]}`;
-  computerResultDisplay.innerHTML = `${score[1]}`;
-  drawResultDisplay.innerHTML = `${score[2]}`;
-  resultDisplay.innerHTML = result;
+  userResultDisplay.textContent = `${score[0]}`;
+  computerResultDisplay.textContent = `${score[1]}`;
+  drawResultDisplay.textContent = `${score[2]}`;
+  resultDisplay.textContent = result;
 };
 
 gameDisplay.addEventListener('click', () => {
@@ -90,14 +90,14 @@ gameDisplay.addEventListener('click', () => {
     }
     popUp.classList.add('hidden');
     score = [0, 0, 0];
-    resultDisplay.innerHTML = '';
-    roundDisplay.innerHTML = `${noOfLive} Live`;
-    computerDisplayChoice.innerHTML = '';
-    userDisplayChoice.innerHTML = '';
-    resultResultDisplay.innerHTML = '';
-    userResultDisplay.innerHTML = `${score[0]}`;
-    computerResultDisplay.innerHTML = `${score[1]}`;
-    drawResultDisplay.innerHTML = `${score[2]}`;
+    resultDisplay.textContent = '';
+    roundDisplay.textContent = `${noOfLive} Live`;
+    computerDisplayChoice.textContent = '';
+    userDisplayChoice.textContent = '';
+    resultResultDisplay.textContent = '';
+    userResultDisplay.textContent = `${score[0]}`;
+    computerResultDisplay.textContent = `${score[1]}`;
+    drawResultDisplay.textContent = `${score[2]}`;
   }
 });
 
@@ -108,7 +108,7 @@ const generateUserChoice = () => {
     generateWinnerDisplay();
     generateResultDisplay();
     roundLives();
-    userDisplayChoice.innerHTML = userChoice;
+    userDisplayChoice.textContent = userChoice;
   }));
 };
 generateUserChoice();
