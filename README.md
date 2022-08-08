@@ -71,5 +71,5 @@ npm run html-validator
 
 ## 👤 Author
 
-- Github: [@author](https://github.com/ibukun53/)
+- Github: [@ibukun53](https://github.com/ibukun53/)
 - Linkedin: [@author](https://www.linkedin.com/in/ibukun53/)
