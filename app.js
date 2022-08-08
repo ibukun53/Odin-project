@@ -1,5 +1,5 @@
 const computerDisplayChoice = document.getElementById('computer-choice');
-const userDisplayChoice = document.getElementById('your-choice');
+const userDisplayChoice = document.querySelector('#your-choice');
 const resultDisplay = document.getElementById('result');
 const possibleChoice = document.querySelectorAll('.btn');
 const gameDisplay = document.querySelector('.game');
@@ -95,6 +95,7 @@ gameDisplay.addEventListener('click', () => {
     }
     popUp.classList.add('hidden');
     score = [0, 0, 0];
+    const [score0, score1, score2] = score;
     resultDisplay.textContent = '';
     roundDisplay.textContent = `${noOfLive} Live`;
     computerDisplayChoice.textContent = '';
