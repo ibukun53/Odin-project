@@ -15,6 +15,7 @@ let computerChoice;
 let result;
 let output;
 let score = [0, 0, 0];
+let [score0, score1, score2] = score;
 let noOfLive = 5;
 const roundLives = () => {
   if (noOfLive <= 0) {
@@ -37,17 +38,19 @@ const generateComputerChoice = () => {
   } else {
     computerChoice = '';
   }
-  computerDisplayChoice.textContent = computerChoice;
+  if (computerDisplayChoice) {
+    computerDisplayChoice.textContent = computerChoice;
+  }
 };
 
 const generateResultDisplay = () => {
-  if ((score[0] > score[1]
-  || score[0] > score[1])) {
+  if ((score0 > score1
+  || score0 > score1)) {
     output = 'Player won!';
-  } else if ((score[1] > score[0])) {
+  } else if ((score1 > score0)) {
     output = 'Computer won!';
-  } else if ((score[1] === score[0]
-    || score[0] === score[1])) {
+  } else if ((score1 === score0
+    || score0 === score1)) {
     output = 'Draw!';
   } else {
     output = 'No win';
@@ -61,25 +64,27 @@ const generateWinnerDisplay = () => {
  || (userChoice === 'rock' && computerChoice === 'scissors')
  || (userChoice === 'scissors' && computerChoice === 'paper')) {
     result = 'player win!';
-    score[0] += 1;
+    score0 += 1;
   } else if ((userChoice === 'paper' && computerChoice === 'paper')
   || (userChoice === 'rock' && computerChoice === 'rock')
   || (userChoice === 'scissors' && computerChoice === 'scissors')) {
     result = 'draw!';
-    score[2] += 1;
+    score2 += 1;
   } else if ((computerChoice === 'paper' && userChoice === 'rock')
      || (computerChoice === 'rock' && userChoice === 'scissors')
      || (computerChoice === 'scissors' && userChoice === 'paper')) {
     result = 'computer win!';
-    score[1] += 1;
+    score1 += 1;
     noOfLive -= 1;
   } else {
     result = 'not supported';
   }
-  userResultDisplay.textContent = `${score[0]}`;
-  computerResultDisplay.textContent = `${score[1]}`;
-  drawResultDisplay.textContent = `${score[2]}`;
-  resultDisplay.textContent = result;
+  userResultDisplay.textContent = score0;
+  computerResultDisplay.textContent = score1;
+  drawResultDisplay.textContent = score2;
+  if (resultDisplay) {
+    resultDisplay.textContent = result;
+  }
 };
 
 gameDisplay.addEventListener('click', () => {
@@ -95,9 +100,9 @@ gameDisplay.addEventListener('click', () => {
     computerDisplayChoice.textContent = '';
     userDisplayChoice.textContent = '';
     resultResultDisplay.textContent = '';
-    userResultDisplay.textContent = `${score[0]}`;
-    computerResultDisplay.textContent = `${score[1]}`;
-    drawResultDisplay.textContent = `${score[2]}`;
+    userResultDisplay.textContent = score0;
+    computerResultDisplay.textContent = score1;
+    drawResultDisplay.textContent = score2;
   }
 });
 
@@ -108,7 +113,9 @@ const generateUserChoice = () => {
     generateWinnerDisplay();
     generateResultDisplay();
     roundLives();
-    userDisplayChoice.textContent = userChoice;
+    if (userDisplayChoice) {
+      userDisplayChoice.textContent = userChoice;
+    }
   }));
 };
 generateUserChoice();
