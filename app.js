@@ -19,8 +19,8 @@ let [score0, score1, score2] = score;
 let noOfLive = 5;
 const roundLives = () => {
   if (noOfLive <= 0) {
-    possibleChoices.forEach((possibleChoices) => {
-      possibleChoices.style.pointerEvents = 'none';
+    possibleChoices.forEach(possibleChoice => {
+      possibleChoice.style.pointerEvents = 'none';
     });
     popUp.classList.remove('hidden');
   }
@@ -90,8 +90,8 @@ const generateWinnerDisplay = () => {
 gameDisplay.addEventListener('click', () => {
   if (noOfLive === 0) {
     noOfLive = 5;
-    possibleChoices.forEach((possibleChoices) => {
-      possibleChoices.style.pointerEvents = 'none';
+    possibleChoices.forEach(possibleChoice => {
+      possibleChoice.style.pointerEvents = 'auto';
     });
     popUp.classList.add('hidden');
     score = [0, 0, 0];
@@ -108,7 +108,7 @@ gameDisplay.addEventListener('click', () => {
 });
 
 const generateUserChoice = () => {
-  possibleChoices.forEach(possibleChoices => possibleChoices.addEventListener('click', (e) => {
+  possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id;
     generateComputerChoice();
     generateWinnerDisplay();
