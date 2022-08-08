@@ -1,7 +1,7 @@
 const computerDisplayChoice = document.querySelector('#computer-choice');
 const userDisplayChoice = document.querySelector('#your-choice');
 const resultDisplay = document.querySelector('#result');
-const possibleChoice = document.querySelectorAll('.btn');
+const possibleChoices = document.querySelectorAll('.btn');
 const gameDisplay = document.querySelector('.game');
 const roundDisplay = document.querySelector('.rounds');
 const computerResultDisplay = document.getElementById('computer-result');
@@ -19,16 +19,16 @@ let [score0, score1, score2] = score;
 let noOfLive = 5;
 const roundLives = () => {
   if (noOfLive <= 0) {
-    for (let i = 0; i < possibleChoice.length; i += 1) {
-      possibleChoice[i].style.pointerEvents = 'none';
-    }
+    possibleChoices.forEach((possibleChoices) => {
+      possibleChoices.style.pointerEvents = 'none';
+    });
     popUp.classList.remove('hidden');
   }
   roundDisplay.textContent = `Live ${noOfLive}`;
 };
 
 const generateComputerChoice = () => {
-  const randomNumber = Math.floor(Math.random() * possibleChoice.length) + 1;
+  const randomNumber = Math.floor(Math.random() * possibleChoices.length) + 1;
   if (randomNumber === 1) {
     computerChoice = 'rock';
   } else if (randomNumber === 2) {
@@ -90,9 +90,9 @@ const generateWinnerDisplay = () => {
 gameDisplay.addEventListener('click', () => {
   if (noOfLive === 0) {
     noOfLive = 5;
-    for (let i = 0; i < possibleChoice.length; i += 1) {
-      possibleChoice[i].style.pointerEvents = 'auto';
-    }
+    possibleChoices.forEach((possibleChoices) => {
+      possibleChoices.style.pointerEvents = 'none';
+    });
     popUp.classList.add('hidden');
     score = [0, 0, 0];
     const [score0, score1, score2] = score;
@@ -108,7 +108,7 @@ gameDisplay.addEventListener('click', () => {
 });
 
 const generateUserChoice = () => {
-  possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
+  possibleChoices.forEach(possibleChoices => possibleChoices.addEventListener('click', (e) => {
     userChoice = e.target.id;
     generateComputerChoice();
     generateWinnerDisplay();
