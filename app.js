@@ -59,19 +59,14 @@ const generateResultDisplay = () => {
   popupResult.textContent = output;
 };
 
-const playwin = () => {
-  if ((userChoice === 'paper' && computerChoice === 'rock')
+const playerWin = () => {
+  (userChoice === 'paper' && computerChoice === 'rock')
   || (userChoice === 'rock' && computerChoice === 'scissors')
-  || (userChoice === 'scissors' && computerChoice === 'paper')) {
-    result = 'player win!';
-    score0 += 1;
-  } else {
-    result = 'computer win!';
-  }
+  || (userChoice === 'scissors' && computerChoice === 'paper')
 };
 
 const generateWinnerDisplay = () => {
-  if (playwin()) {
+  if (playerWin()) {
     result = 'player win!';
     score0 += 1;
   } else if ((userChoice === 'paper' && computerChoice === 'paper')
