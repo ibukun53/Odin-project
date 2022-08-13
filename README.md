@@ -1,6 +1,8 @@
 # Rock,Paper, Scissors
 
-> Rock,Paper, Scissors is a beginners app game
+> Rock,Paper, Scissors is a beginners app game that is meant for entertainment and fun
+
+![screenshot](./image_Screenshot.png)
 
 This PR add a Rock, Paper, Scissors Game App features that includes the project details. The creation of this project is the game is usually played by computer and user.
 Storing information about this project in an HTML file. JAVASCRIPT syntax is mostly used the creation of this app with the implementation of JAVASCRIPT features such as function, while loop, if/else statement, logical operators, comparison operators, variables and data types for better structuring, effectiveness and efficient performance
@@ -20,7 +22,7 @@ Storing information about this project in an HTML file. JAVASCRIPT syntax is mos
 - Clone the project
 
 ```bash
-git clone https://github.com/user/html-css-template.git
+git clone https://github.com/ibukun53/Odin-project
 
 ```
 
@@ -69,6 +71,5 @@ npm run html-validator
 
 ## 👤 Author
 
-- Github: [@author](https://github.com/author)
-- Twitter: [@author](https://twitter.com/author)
-- Linkedin: [@author](https://www.linkedin.com/in/author/)
+- Github: [@ibukun53](https://github.com/ibukun53/)
+- Linkedin: [@olusanya](https://www.linkedin.com/in/ibukun53/)
