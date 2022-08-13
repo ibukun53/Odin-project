@@ -59,24 +59,32 @@ const generateResultDisplay = () => {
   popupResult.textContent = output;
 };
 
-const playerWin = () => {
-  (userChoice === 'paper' && computerChoice === 'rock')
-  || (userChoice === 'rock' && computerChoice === 'scissors')
-  || (userChoice === 'scissors' && computerChoice === 'paper')
-};
+const playerWin = () => (
+  userChoice === 'paper' && computerChoice === 'rock'
+  || userChoice === 'rock' && computerChoice === 'scissors'
+  || userChoice === 'scissors' && computerChoice === 'paper'
+);
+
+const draw = () => (
+  ( userChoice === 'paper' && computerChoice === 'paper')
+  || (userChoice === 'rock' && computerChoice === 'rock')
+  || (userChoice === 'scissors' && computerChoice === 'scissors')
+);
+
+const computerWin = () => (
+  (computerChoice === 'paper' && userChoice === 'rock')
+|| (computerChoice === 'rock' && userChoice === 'scissors') 
+|| (computerChoice === 'scissors' && userChoice === 'paper')
+)
 
 const generateWinnerDisplay = () => {
   if (playerWin()) {
     result = 'player win!';
     score0 += 1;
-  } else if ((userChoice === 'paper' && computerChoice === 'paper')
-  || (userChoice === 'rock' && computerChoice === 'rock')
-  || (userChoice === 'scissors' && computerChoice === 'scissors')) {
+  } else if (draw()) {
     result = 'draw!';
     score2 += 1;
-  } else if ((computerChoice === 'paper' && userChoice === 'rock')
-     || (computerChoice === 'rock' && userChoice === 'scissors')
-     || (computerChoice === 'scissors' && userChoice === 'paper')) {
+  } else if (computerWin()) {
     result = 'computer win!';
     score1 += 1;
     noOfLive -= 1;
