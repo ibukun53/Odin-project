@@ -60,22 +60,22 @@ const generateResultDisplay = () => {
 };
 
 const playerWin = () => (
-  userChoice === 'paper' && computerChoice === 'rock'
-  || userChoice === 'rock' && computerChoice === 'scissors'
-  || userChoice === 'scissors' && computerChoice === 'paper'
+  (userChoice === 'paper' && computerChoice === 'rock')
+  || (userChoice === 'rock' && computerChoice === 'scissors')
+  || (userChoice === 'scissors' && computerChoice === 'paper')
 );
 
 const draw = () => (
-  ( userChoice === 'paper' && computerChoice === 'paper')
+  (userChoice === 'paper' && computerChoice === 'paper')
   || (userChoice === 'rock' && computerChoice === 'rock')
   || (userChoice === 'scissors' && computerChoice === 'scissors')
 );
 
 const computerWin = () => (
   (computerChoice === 'paper' && userChoice === 'rock')
-|| (computerChoice === 'rock' && userChoice === 'scissors') 
+|| (computerChoice === 'rock' && userChoice === 'scissors')
 || (computerChoice === 'scissors' && userChoice === 'paper')
-)
+);
 
 const generateWinnerDisplay = () => {
   if (playerWin()) {
