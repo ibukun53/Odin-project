@@ -5,6 +5,9 @@
 This PR add a Rock, Paper, Scissors Game App features that includes the project details. The creation of this project is the game is usually played by computer and user.
 Storing information about this project in an HTML file. JAVASCRIPT syntax is mostly used the creation of this app with the implementation of JAVASCRIPT features such as function, while loop, if/else statement, logical operators, comparison operators, variables and data types for better structuring, effectiveness and efficient performance
 
+# Frontend Mentor - Rock, Paper, Scissors solution
+
+This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 ## Built With
 
 - Major languages,

@@ -1,7 +1,109 @@
 body {
-  background-color: #f2f2f2;
+  background-color:hsl(237, 49%, 15%);
 }
 
+
+.container {
+  max-width: 90%;
+  width: 80%;
+  height:20%;
+  margin-top: 10px;
+  margin-bottom: 5%;
+  border: solid 3px #e4e0e0;
+  border-radius: 10px;
+  margin-left: 10%;
+  left: 0;
+  display: flex;
+}
+
+.rounds {
+  background: #fff;
+  padding: 4.5%;
+  height: 7%;
+  margin: 4px;
+  margin-left: auto;
+  border-radius: 5px;
+  font-size: 30px;
+  color: rgb(223, 151, 118);
+}
+
+.item-container {
+  margin: 1%; 
+}
+
+.logo{
+  width: 110%;
+  height: 85%
+}
+
+.bg-triangle{
+ margin-top: 4%;
+ margin-left:35%;
+}
+
+.rock-container{
+  margin-left: 41%;
+  margin-top: -10%;
+  position: relative;
+}
+
+.paper-container{
+  margin-left: 30%;
+  margin-top: -29%;
+}
+
+.scissors-container{
+  margin-left: 50%;
+  margin-top: -30%;
+}
+.circle{
+  width:150px;
+  height:150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paper-circle{
+  background-color: blue;
+}
+.rock-circle{
+  background-color: red;
+}
+.scissors-circle{
+  background-color: yellow;
+}
+.inner-circle{
+  width: 110px;
+  height:110px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.rock-icon .paper-icon .scissors-icon{
+  width: 50px;
+  height:50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rule-btn{
+  padding: 5px 10px 18px 20px;
+  background-color: white;
+  color:black;
+  border-radius: 5px;
+  font-size:16px;
+  width:80px;
+  height:30px;
+  margin-left: auto;
+  text-align: center;
+}
 table,
 th,
 td {
@@ -32,16 +134,6 @@ h1 {
   padding-top: 170px;
 }
 
-.container {
-  margin: 34%;
-  margin-top: 10px;
-  margin-bottom: 5%;
-  border: solid 2px rgb(177, 139, 124);
-  background-color: rgb(224, 212, 203);
-  left: 0;
-  display: flex;
-}
-
 .game {
   padding: 19px;
   z-index: -3;
@@ -63,26 +155,7 @@ h1 {
   color: black;
 }
 
-.rounds {
-  background: #fff;
-  width: 50px;
-  padding: 9%;
-  height: 16%;
-  margin-top: 6px;
-  margin-right: 9%;
-  margin-left: 32%;
-  margin-bottom: 2%;
-  border-radius: 5px;
-  font-size: 30px;
-  color: rgb(223, 151, 118);
-}
 
-.item-container {
-  line-height: 20px;
-  font-size: 17px;
-  margin-left: 10px;
-  color: black;
-}
 
 .btn {
   width: 150px;
@@ -143,407 +216,26 @@ tr:nth-child(even) { background-color: #f2f2f2; }
   display: none;
 }
 
-@media only screen and (max-width: 1102px) {
+
+
+@media only screen and (max-width: 768px) {
   .container {
-    margin: 32%;
-    margin-top: 10px;
-    margin-bottom: 25px;
-  }
-
-  .choice {
-    width: 30%;
-  }
-
-  .rounds {
-    margin-top: 6px;
-    margin-right: 7%;
-    margin-left: 25%;
-    border-radius: 5px;
-  }
-
-  .choice-team {
-    margin-left: 8%;
-    margin-top: 1%;
-  }
-
-  .btn {
-    width: 100px;
-    height: 100px;
-    margin-left: 14%;
-  }
-
-  .result-team {
-    margin-left: 29%;
-    margin-bottom: 19%;
-    margin-top: 15%;
-    font-size: 22px;
-  }
-
-  .item-container {
-    line-height: 22px;
-  }
-
-  .teams {
-    display: flex;
-    margin-top: 5%;
-    font-size: 17px;
-  }
-
-  .table-team {
-    margin: auto;
-    width: 70%;
-    margin-bottom: 10%;
-  }
-
-  .game {
-    padding: 9px;
-    margin: 2px 45%;
-  }
-
-  .popup {
-    padding-top: 100px;
-  }
-}
-
-@media only screen and (max-width: 992px) {
-  .container {
-    margin: 30%;
-    margin-top: 10px;
-    margin-bottom: 25px;
-  }
-
-  .choice {
-    padding-top: 17%;
-  }
-
-  .rounds {
-    margin-top: 6px;
-    margin-right: 7%;
-    margin-left: 20%;
-    border-radius: 5px;
-  }
-
-  .choice-team {
+    max-width:80%;
+    width: 77%; 
+    margin-bottom: 5%;
     margin-left: 11%;
-    margin-top: 1%;
   }
-
-  .btn {
-    width: 100px;
-    height: 100px;
-    margin-left: 14%;
-  }
-
-  .result-team {
-    margin-left: 29%;
-    margin-bottom: 40%;
-    margin-top: 35%;
-    font-size: 22px;
-  }
-
   .item-container {
-    line-height: 22px;
-  }
-
-  .teams {
-    display: flex;
-    margin-top: 5%;
-    font-size: 17px;
-  }
-
-  .table-team {
-    margin: auto;
-    width: 70%;
-    margin-bottom: 10%;
-  }
-
-  .game {
-    padding: 9px;
-    margin: 2px 45%;
-  }
-
-  .popup {
-    padding-top: 100px;
-  }
+    line-height: 20px;
+    margin: 2%;
 }
-
-@media only screen and (max-width: 760px) {
-  .container {
-    margin: 20%;
-    margin-top: 10px;
-    margin-bottom: 25px;
-    border: solid 2px;
-    background-color: rgb(224, 212, 203);
-    left: 0;
-    display: flex;
-  }
-
   .rounds {
     width: 50px;
     padding: 9%;
     height: 16%;
     margin-top: 6px;
-    margin-right: 7%;
-    margin-left: 20%;
-    border-radius: 5px;
-  }
-
-  .choice-team {
-    margin-left: 10%;
-    margin-top: 1%;
-  }
-
-  .btn {
-    width: 100px;
-    height: 100px;
-    margin-left: 9%;
-  }
-
-  .result-team {
-    margin-left: 29%;
-    margin-bottom: 30%;
-    margin-top: 36%;
-    font-size: 22px;
-  }
-
-  .choice {
-    width: 27%;
-    background: rgb(224, 196, 174);
-    padding: 3% 2% 2% 2%;
-  }
-
-  .item-container {
-    line-height: 22px;
-  }
-
-  .teams {
-    display: flex;
-    margin-top: 5%;
-    font-size: 17px;
-  }
-
-  .table-team {
-    margin: auto;
-    width: 70%;
-    margin-bottom: 10%;
-  }
-
-  .game {
-    padding: 9px;
-    margin: 2px 45%;
-  }
-
-  .popup {
-    padding-top: 100px;
+    margin-right: 9%;
+    margin-left: 1%;
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .container {
-    margin: 20%;
-    margin-top: 10px;
-    margin-bottom: 25px;
-    border: solid 2px;
-    background-color: rgb(224, 212, 203);
-    left: 0;
-    display: flex;
-  }
-
-  .rounds {
-    width: 50px;
-    padding: 9%;
-    height: 16%;
-    margin-top: 6px;
-    margin-right: 7%;
-    margin-left: 14%;
-    border-radius: 5px;
-  }
-
-  .choice-team {
-    margin-left: 11%;
-    margin-top: 1%;
-  }
-
-  .btn {
-    width: 100px;
-    height: 100px;
-    margin-left: 7%;
-  }
-
-  .result-team {
-    margin-left: 29%;
-    margin-bottom: 40%;
-    margin-top: 42%;
-    font-size: 22px;
-  }
-
-  .choice {
-    padding-top: 17%;
-    color: rgb(29, 5, 5);
-    border-radius: 65%;
-    border: solid 5px rgb(163, 140, 131);
-    position: absolute;
-    text-align: center;
-    margin-left: -5px;
-  }
-
-  .item-container {
-    line-height: 22px;
-  }
-
-  .teams {
-    display: flex;
-    margin-top: 5%;
-    font-size: 17px;
-  }
-
-  .table-team {
-    margin: auto;
-    width: 70%;
-    margin-bottom: 10%;
-  }
-
-  .game {
-    padding: 9px;
-    margin: 2px 45%;
-  }
-
-  .popup {
-    padding-top: 100px;
-  }
-}
-
-@media only screen and (max-width: 485px) {
-  .container {
-    margin: 40px;
-    margin-top: 10px;
-    margin-bottom: 25px;
-    border: solid 2px;
-    background-color: rgb(224, 212, 203);
-    left: 0;
-    display: flex;
-  }
-
-  .rounds {
-    margin-left: 26px;
-  }
-
-  .choice-team {
-    margin-left: 9%;
-    margin-top: 1%;
-  }
-
-  .mytxt {
-    font-size: 30px;
-    color: black;
-  }
-
-  .result-team {
-    margin-left: 29%;
-    margin-top: 65%;
-    margin-bottom: 60%;
-  }
-
-  .item-container {
-    line-height: 20px;
-  }
-
-  .teams {
-    font-size: 17px;
-  }
-
-  .btn {
-    width: 60px;
-    height: 70px;
-    margin-left: 10%;
-  }
-
-  .table-team {
-    margin: auto;
-    width: 70%;
-    margin-bottom: 10%;
-  }
-
-  .popup {
-    padding-top: 120px;
-  }
-
-  .choice {
-    padding-top: 23%;
-    color: rgb(29, 5, 5);
-    border-radius: 65%;
-    border: solid 5px rgb(163, 140, 131);
-    position: absolute;
-    text-align: center;
-    margin-left: -5px;
-  }
-}
-
-@media only screen and (max-width: 300px) {
-  .container {
-    margin: 20px;
-    margin-top: 10px;
-    margin-bottom: 25px;
-    border: solid 2px;
-    background-color: rgb(224, 212, 203);
-    left: 0;
-    display: flex;
-  }
-
-  .rounds {
-    margin-left: 26px;
-  }
-
-  .choice-team {
-    margin-left: 9%;
-    margin-top: 1%;
-  }
-
-  .item {
-    font-size: 16px;
-  }
-
-  .result-team {
-    margin-left: 22%;
-    margin-top: 75%;
-    margin-bottom: 60%;
-  }
-
-  #item-choice {
-    padding-top: 60px;
-  }
-
-  .item-container {
-    line-height: 20px;
-  }
-
-  .teams {
-    font-size: 17px;
-  }
-
-  .btn {
-    width: 20px;
-    height: 70px;
-    margin-left: 3%;
-  }
-
-  .table-team {
-    margin: auto;
-    width: 70%;
-    margin-bottom: 10%;
-  }
-
-  .popup {
-    padding-top: 120px;
-  }
-
-  .choice {
-    background: rgb(224, 196, 174);
-    padding-top: 23%;
-    color: rgb(29, 5, 5);
-    border-radius: 65%;
-    border: solid 5px rgb(163, 140, 131);
-    position: absolute;
-    text-align: center;
-  }
-}

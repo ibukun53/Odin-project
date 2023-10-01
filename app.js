@@ -1,7 +1,7 @@
 const computerDisplayChoice = document.getElementById('computer-choice');
 const userDisplayChoice = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
-const possibleChoice = document.querySelectorAll('.btn');
+const possibleChoices = document.querySelectorAll('.items');
 const gameDisplay = document.querySelector('.game');
 const roundDisplay = document.querySelector('.rounds');
 const computerResultDisplay = document.getElementById('computer-result');
@@ -15,12 +15,15 @@ let computerChoice;
 let result;
 let output;
 let score = [0, 0, 0];
+const ROCK = document.querySelector('.rock-container');
+const PAPER = document.querySelector('.paper-container');
+const SCISSORS = document.querySelector('.scissors-container');
 
 let noOfLive = 5;
 const roundLives = () => {
   if (noOfLive <= 0) {
-    for (let i = 0; i < possibleChoice.length; i += 1) {
-      possibleChoice[i].style.pointerEvents = 'none';
+    for (let i = 0; i < possibleChoices.length; i += 1) {
+      possibleChoices[i].style.pointerEvents = 'none';
     }
     popUp.classList.remove('hidden');
   }
@@ -30,8 +33,8 @@ const roundLives = () => {
 gameDisplay.addEventListener('click', () => {
   if (noOfLive === 0) {
     noOfLive = 5;
-    for (let i = 0; i < possibleChoice.length; i += 1) {
-      possibleChoice[i].style.pointerEvents = 'auto';
+    for (let i = 0; i < possibleChoices.length; i += 1) {
+      possibleChoices[i].style.pointerEvents = 'auto';
     }
     popUp.classList.add('hidden');
     score = [0, 0, 0];
@@ -47,7 +50,7 @@ gameDisplay.addEventListener('click', () => {
 });
 
 const generateComputerChoice = () => {
-  const randomNumber = Math.floor(Math.random() * possibleChoice.length) + 1;
+  const randomNumber = Math.floor(Math.random() * possibleChoices.length) + 1;
   if (randomNumber === 1) {
     computerChoice = 'rock';
   } else if (randomNumber === 2) {
@@ -57,23 +60,23 @@ const generateComputerChoice = () => {
   } else {
     computerChoice = '';
   }
-  computerDisplayChoice.innerHTML = computerChoice;
+  computerDisplayChoice.textContent =` computer choose ${computerChoice}`;
 };
 
 const generateWinnerDisplay = () => {
-  if ((userChoice === 'paper' && computerChoice === 'rock')
- || (userChoice === 'rock' && computerChoice === 'scissors')
- || (userChoice === 'scissors' && computerChoice === 'paper')) {
+  if ((userChoice === PAPER && computerChoice === ROCK)
+ || (userChoice === ROCK && computerChoice === SCISSORS)
+ || (userChoice === SCISSORS && computerChoice === PAPER)) {
     result = 'player win!';
     score[0] += 1;
-  } else if ((userChoice === 'paper' && computerChoice === 'paper')
-  || (userChoice === 'rock' && computerChoice === 'rock')
-  || (userChoice === 'scissors' && computerChoice === 'scissors')) {
+  } else if ((userChoice === PAPER && computerChoice === PAPER)
+  || (userChoice === ROCK && computerChoice === ROCK)
+  || (userChoice === ROCK && computerChoice === ROCK)) {
     result = 'draw!';
     score[2] += 1;
-  } else if ((computerChoice === 'paper' && userChoice === 'rock')
-     || (computerChoice === 'rock' && userChoice === 'scissors')
-     || (computerChoice === 'scissors' && userChoice === 'paper')) {
+  } else if ((computerChoice === PAPER && userChoice === ROCK)
+     || (computerChoice === ROCK && userChoice === SCISSORS)
+     || (computerChoice === SCISSORS && userChoice === PAPER)) {
     result = 'computer win!';
     score[1] += 1;
     noOfLive -= 1;
@@ -92,7 +95,7 @@ const generateResultDisplay = () => {
   } else if ((score[1] > score[0])) {
     output = 'Computer won!';
   } else if ((score[1] === score[0]
-    || score[0] === score[1])) {
+    || score[0] === score[1])) { 
     output = 'Draw!';
   } else {
     output = 'No win';
@@ -102,15 +105,20 @@ const generateResultDisplay = () => {
 };
 
 const generateUserChoice = () => {
-  possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
-    userChoice = e.target.id;
+  possibleChoices.forEach(possibleChoice => 
+    possibleChoice.addEventListener('click', (e) => {
+      userChoice = e.target.id;
     generateComputerChoice();
-    generateWinnerDisplay();
-    generateResultDisplay();
-    roundLives();
-    userDisplayChoice.innerHTML = userChoice;
+      generateWinnerDisplay();
+      generateResultDisplay();
+      roundLives();
+      console.log(userChoice); 
+      userDisplayChoice.textContent = `You clicked : ${userChoice}`;
   }));
-};
+  };
+  
+  
+   
 
 const playRound = () => {
   generateUserChoice();
