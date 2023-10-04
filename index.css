@@ -38,29 +38,37 @@ body {
 
 .bg-triangle{
  margin-top: 4%;
- margin-left:35%;
+ margin-left:30%;
+ width: 40%;
 }
 
 .rock-container{
-  margin-left: 41%;
+  margin-left: 45%;
   margin-top: -10%;
   position: relative;
 }
 
 .paper-container{
-  margin-left: 30%;
-  margin-top: -29%;
+  margin-left: 25%;
+  position: relative;
+  margin-top: -43%;
 }
-
+.computer-result{
+  margin-left: 61%;
+  position: absolute;
+  margin-top: -42%;
+}
 .scissors-container{
-  margin-left: 50%;
-  margin-top: -30%;
+  margin-left: 61%;
+  position: absolute;
+  margin-top: -11%;
 }
 .circle{
   width:150px;
   height:150px;
   border-radius: 50%;
   display: flex;
+  position: fixed;
   justify-content: center;
   align-items: center;
 }
@@ -85,6 +93,27 @@ body {
   align-items: center;
 }
 
+.inner-computer-circle{
+  width: 110px;
+  height:110px;
+  border-radius: 50%;
+  background-color: green;
+  display: flex;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.outer-circle{
+  width:150px;
+  height:150px;
+  border-radius: 50%;
+  display: flex;
+  background-color: rgb(180, 169, 240);
+  justify-content: center;
+  align-items: center;
+}
+
 .rock-icon .paper-icon .scissors-icon{
   width: 50px;
   height:50px;
@@ -92,7 +121,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+/*
 .rule-btn{
   padding: 5px 10px 18px 20px;
   background-color: white;

@@ -14,11 +14,19 @@ let userChoice;
 let computerChoice;
 let result;
 let output;
+let computerSelect;
+let innerCircle;
+const triangle = document.querySelector('.bg-triangle')
+let userSelect;
+let randomNumber;
+
+let computerResult;
+
 let score = [0, 0, 0];
+const objects = document.querySelectorAll('.object');
 const ROCK = document.querySelector('.rock-container');
 const PAPER = document.querySelector('.paper-container');
 const SCISSORS = document.querySelector('.scissors-container');
-
 let noOfLive = 5;
 const roundLives = () => {
   if (noOfLive <= 0) {
@@ -50,17 +58,19 @@ gameDisplay.addEventListener('click', () => {
 });
 
 const generateComputerChoice = () => {
-  const randomNumber = Math.floor(Math.random() * possibleChoices.length) + 1;
-  if (randomNumber === 1) {
-    computerChoice = 'rock';
+  randomNumber = Math.floor(Math.random() * possibleChoices.length);
+ if (randomNumber === 1) {
+    computerChoice = 'Paper';
   } else if (randomNumber === 2) {
-    computerChoice = 'scissors';
+    computerChoice = 'Scissors';
   } else if (randomNumber === 3) {
-    computerChoice = 'paper';
+    computerChoice = 'Rock'; 
   } else {
-    computerChoice = '';
+    computerChoice = 'Rock';
   }
-  computerDisplayChoice.textContent =` computer choose ${computerChoice}`;
+ computerDisplayChoice.textContent =`computer choose ${computerChoice}`;
+ computerSelect=possibleChoices[randomNumber];
+ console.log(computerSelect);
 };
 
 const generateWinnerDisplay = () => {
@@ -104,23 +114,60 @@ const generateResultDisplay = () => {
   popupResult.innerHTML = output;
 };
 
+
+
+const playGame = () =>{
+  // computerChoice to display block if other options have been removed
+  innerCircle.style.display = 'block';
+ if(userChoice === 'Rock'){
+  PAPER.remove();
+  SCISSORS.remove();
+  triangle.remove(); 
+  // disabling th userChoice option
+  ROCK.disabled = false;
+ } else if (userChoice === 'Scissors'){
+  PAPER.remove();
+  ROCK.remove();
+  triangle.remove();
+  } else if (userChoice === 'Paper'){
+  ROCK.remove();
+  SCISSORS.remove();
+  triangle.remove();
+  } 
+}
+
+// computer random object
+const computerGame= () =>{
+  const computerImage = document.createElement('img');
+computerImage.src = 'image/' + computerChoice + '.svg';
+innerCircle = document.querySelector('.inner-computer-circle');
+ innerCircle.appendChild(computerImage);
+ // the computerchoice to display none here
+ innerCircle.style.display = 'none';
+}
+
+computerGame();
+
+
+
 const generateUserChoice = () => {
   possibleChoices.forEach(possibleChoice => 
     possibleChoice.addEventListener('click', (e) => {
       userChoice = e.target.id;
-    generateComputerChoice();
-      generateWinnerDisplay();
-      generateResultDisplay();
-      roundLives();
-      console.log(userChoice); 
       userDisplayChoice.textContent = `You clicked : ${userChoice}`;
-  }));
-  };
+    generateComputerChoice();
+    generateWinnerDisplay();
+    playGame();
+    generateResultDisplay(); 
+      roundLives();
+       }))};
   
-  
+ 
+     
    
 
 const playRound = () => {
   generateUserChoice();
+ 
 };
 playRound();
