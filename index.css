@@ -50,27 +50,29 @@ body {
 
 .paper-container{
   margin-left: 25%;
-  position: relative;
   margin-top: -43%;
 }
 .computer-result{
   margin-left: 61%;
-  position: absolute;
   margin-top: -42%;
 }
 .scissors-container{
   margin-left: 61%;
-  position: absolute;
   margin-top: -11%;
 }
+
 .circle{
   width:150px;
   height:150px;
   border-radius: 50%;
   display: flex;
-  position: fixed;
   justify-content: center;
   align-items: center;
+}
+
+.right{
+  margin-right: 50%;
+
 }
 
 .paper-circle{

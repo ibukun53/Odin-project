@@ -133,6 +133,7 @@ const playGame = () =>{
   ROCK.remove();
   SCISSORS.remove();
   triangle.remove();
+  PAPER.classList.add('right');
   } 
 }
 
