@@ -70,19 +70,19 @@ const generateComputerChoice = () => {
 };
 
 const generateWinnerDisplay = () => {
-  if ((userChoice === PAPER && computerChoice === ROCK)
- || (userChoice === ROCK && computerChoice === SCISSORS)
- || (userChoice === SCISSORS && computerChoice === PAPER)) {
+  if ((userChoice === 'Paper' && computerChoice === 'Rock')
+ || (userChoice === 'Rock' && computerChoice === 'Scissors')
+ || (userChoice === 'Scissors' && computerChoice === 'Paper')) {
     result = 'player win!';
     score[0] += 1;
-  } else if ((userChoice === PAPER && computerChoice === PAPER)
-  || (userChoice === ROCK && computerChoice === ROCK)
-  || (userChoice === ROCK && computerChoice === ROCK)) {
+  } else if ((userChoice === 'Paper' && computerChoice === 'Paper')
+  || (userChoice === 'Rock' && computerChoice === 'Rock')
+  || (userChoice === 'Rock' && computerChoice === 'Rock')) {
     result = 'draw!';
     score[2] += 1;
-  } else if ((computerChoice === PAPER && userChoice === ROCK)
-     || (computerChoice === ROCK && userChoice === SCISSORS)
-     || (computerChoice === SCISSORS && userChoice === PAPER)) {
+  } else if ((computerChoice === 'Paper' && userChoice === 'Rock')
+     || (computerChoice === 'Rock' && userChoice === 'Scissors')
+     || (computerChoice === 'Scissors' && userChoice === 'Paper')) {
     result = 'computer win!';
     score[1] += 1;
     noOfLive -= 1;
