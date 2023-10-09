@@ -39,26 +39,28 @@ body {
 .bg-triangle{
  margin-top: 4%;
  margin-left:30%;
- width: 40%;
+ width:30%;
 }
 
 .rock-container{
-  margin-left: 45%;
+  margin-left: 41%;
   margin-top: -10%;
   position: relative;
 }
 
 .paper-container{
   margin-left: 25%;
-  margin-top: -43%;
+  margin-top: -35%;
+  position: sticky;
 }
 .computer-result{
   margin-left: 61%;
-  margin-top: -42%;
+  margin-top: -11%;
 }
 .scissors-container{
-  margin-left: 61%;
+  margin-left: 53%;
   margin-top: -11%;
+  position: sticky;
 }
 
 .circle{
@@ -71,8 +73,8 @@ body {
 }
 
 .right{
-  margin-right: 50%;
-
+  margin-left: 30%;
+  margin-top: -2%;
 }
 
 .paper-circle{

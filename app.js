@@ -14,16 +14,9 @@ let userChoice;
 let computerChoice;
 let result;
 let output;
-let computerSelect;
-let innerCircle;
-const triangle = document.querySelector('.bg-triangle')
-let userSelect;
-let randomNumber;
-
-let computerResult;
-
+let computerImage;
+const triangle = document.querySelector('.bg-triangle');
 let score = [0, 0, 0];
-const objects = document.querySelectorAll('.object');
 const ROCK = document.querySelector('.rock-container');
 const PAPER = document.querySelector('.paper-container');
 const SCISSORS = document.querySelector('.scissors-container');
@@ -58,19 +51,22 @@ gameDisplay.addEventListener('click', () => {
 });
 
 const generateComputerChoice = () => {
-  randomNumber = Math.floor(Math.random() * possibleChoices.length);
- if (randomNumber === 1) {
+  const randomNumber = Math.floor(Math.random() * possibleChoices.length);
+  if (randomNumber === 1) {
     computerChoice = 'Paper';
   } else if (randomNumber === 2) {
     computerChoice = 'Scissors';
   } else if (randomNumber === 3) {
-    computerChoice = 'Rock'; 
+    computerChoice = 'Rock';
   } else {
     computerChoice = 'Rock';
   }
- computerDisplayChoice.textContent =`computer choose ${computerChoice}`;
- computerSelect=possibleChoices[randomNumber];
- console.log(computerSelect);
+  computerDisplayChoice.textContent = `computer choose ${computerChoice}`;
+  // displaying computer game
+  const computerSelect = possibleChoices[randomNumber];
+  computerImage = document.createElement('div');
+  computerImage = document.querySelector('.computer-result');
+  computerImage.appendChild(computerSelect);
 };
 
 const generateWinnerDisplay = () => {
@@ -105,7 +101,7 @@ const generateResultDisplay = () => {
   } else if ((score[1] > score[0])) {
     output = 'Computer won!';
   } else if ((score[1] === score[0]
-    || score[0] === score[1])) { 
+    || score[0] === score[1])) {
     output = 'Draw!';
   } else {
     output = 'No win';
@@ -114,31 +110,32 @@ const generateResultDisplay = () => {
   popupResult.innerHTML = output;
 };
 
-
-
-const playGame = () =>{
+const playGame = () => {
   // computerChoice to display block if other options have been removed
-  innerCircle.style.display = 'block';
- if(userChoice === 'Rock'){
-  PAPER.remove();
-  SCISSORS.remove();
-  triangle.remove(); 
-  // disabling th userChoice option
-  ROCK.disabled = false;
- } else if (userChoice === 'Scissors'){
-  PAPER.remove();
-  ROCK.remove();
-  triangle.remove();
-  } else if (userChoice === 'Paper'){
-  ROCK.remove();
-  SCISSORS.remove();
-  triangle.remove();
-  PAPER.classList.add('right');
-  } 
-}
+  // computerImage.style.display = 'block';
+  if (userChoice === 'Rock') {
+    PAPER.remove();
+    SCISSORS.remove();
+    triangle.remove();
+    // disabling th userChoice option
+    ROCK.disabled = false;
+    ROCK.classList.add('right');
+  } else if (userChoice === 'Scissors') {
+    PAPER.remove();
+    ROCK.remove();
+    triangle.remove();
+
+    SCISSORS.classList.add('right');
+  } else if (userChoice === 'Paper') {
+    ROCK.remove();
+    SCISSORS.remove();
+    triangle.remove();
+    PAPER.classList.add('right');
+  }
+};
 
 // computer random object
-const computerGame= () =>{
+/** const computerGame= () =>{
   const computerImage = document.createElement('img');
 computerImage.src = 'image/' + computerChoice + '.svg';
 innerCircle = document.querySelector('.inner-computer-circle');
@@ -146,29 +143,21 @@ innerCircle = document.querySelector('.inner-computer-circle');
  // the computerchoice to display none here
  innerCircle.style.display = 'none';
 }
-
-computerGame();
-
-
+*/
 
 const generateUserChoice = () => {
-  possibleChoices.forEach(possibleChoice => 
-    possibleChoice.addEventListener('click', (e) => {
-      userChoice = e.target.id;
-      userDisplayChoice.textContent = `You clicked : ${userChoice}`;
+  possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
+    userChoice = e.target.id;
+    userDisplayChoice.textContent = `You clicked : ${userChoice}`;
     generateComputerChoice();
     generateWinnerDisplay();
     playGame();
-    generateResultDisplay(); 
-      roundLives();
-       }))};
-  
- 
-     
-   
+    generateResultDisplay();
+    roundLives();
+  }));
+};
 
 const playRound = () => {
   generateUserChoice();
- 
 };
 playRound();
