@@ -180,9 +180,10 @@ width: 40%;
 }
 
 .rule-image{
-   margin: 20px;
-   width: 90%;
-   height: 80%;
+   margin: auto;
+   margin-left:14%;
+   width: 70%;
+   height: 60%;
 }
 .active{
   display: block;
