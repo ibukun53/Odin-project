@@ -31,19 +31,20 @@ body {
 }
 
 .logo{
-  width: 110%;
-  height: 85%
+  width: 130%;
+  height: 95%
 }
-
 
 .main-container{
   display: block;
+  position: relative;
 }
 
 .bg-triangle{
  margin-top: 4%;
  margin-left: 35%;
  width:25%;
+ position: relative;
 }
 
 .rock-container{
@@ -53,7 +54,7 @@ body {
 }
 
 .paper-container{
-  margin-left: 30%;
+  margin-left: 32%;
   margin-top: -25%;
 }
 .computer-result{
@@ -62,7 +63,7 @@ body {
 }
 
 .scissors-container{
-  margin-left: 32%;
+  margin-left: 16%;
   margin-top: -26%;
 }
 
@@ -132,7 +133,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-/*
+
 .rule-btn{
   padding: 5px 10px 18px 20px;
   background-color: white;
@@ -142,8 +143,11 @@ body {
   width:80px;
   height:30px;
   margin-left: auto;
+  margin-top: 15%;
   text-align: center;
 }
+/*
+
 table,
 th,
 td {
