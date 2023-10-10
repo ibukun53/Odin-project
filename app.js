@@ -1,4 +1,4 @@
-const computerDisplayChoice = document.getElementById('computer-choice');
+/* const computerDisplayChoice = document.getElementById('computer-choice');
 const userDisplayChoice = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
 const possibleChoices = document.querySelectorAll('.items');
@@ -143,7 +143,6 @@ innerCircle = document.querySelector('.inner-computer-circle');
  // the computerchoice to display none here
  innerCircle.style.display = 'none';
 }
-*/
 
 const generateUserChoice = () => {
   possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
@@ -161,3 +160,4 @@ const playRound = () => {
   generateUserChoice();
 };
 playRound();
+*/

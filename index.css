@@ -2,7 +2,6 @@ body {
   background-color:hsl(237, 49%, 15%);
 }
 
-
 .container {
   max-width: 90%;
   width: 80%;
@@ -36,31 +35,35 @@ body {
   height: 85%
 }
 
+
+.main-container{
+  display: block;
+}
+
 .bg-triangle{
  margin-top: 4%;
- margin-left:30%;
- width:30%;
+ margin-left: 35%;
+ width:25%;
 }
 
 .rock-container{
-  margin-left: 41%;
-  margin-top: -10%;
-  position: relative;
+  position: fixed;
+  margin-left: 44%;
+  margin-top: -7%;
 }
 
 .paper-container{
-  margin-left: 25%;
-  margin-top: -35%;
-  position: sticky;
+  margin-left: 30%;
+  margin-top: -25%;
 }
 .computer-result{
   margin-left: 61%;
   margin-top: -11%;
 }
+
 .scissors-container{
-  margin-left: 53%;
-  margin-top: -11%;
-  position: sticky;
+  margin-left: 32%;
+  margin-top: -26%;
 }
 
 .circle{
@@ -75,6 +78,10 @@ body {
 .right{
   margin-left: 30%;
   margin-top: -2%;
+}
+
+.sub-container{
+  display: flex;
 }
 
 .paper-circle{
@@ -272,3 +279,4 @@ tr:nth-child(even) { background-color: #f2f2f2; }
   }
 }
 
+*/
