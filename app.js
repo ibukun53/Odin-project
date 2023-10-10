@@ -1,3 +1,13 @@
+const ruleContainer = document.querySelector('.rule-container');
+const ruleBtn = document.querySelector('.rule-btn');
+ruleBtn.addEventListener('click', () => {
+  ruleContainer.classList.toggle('active');
+});
+
+const closeRule = document.querySelector('.close-rule');
+closeRule.addEventListener('click', () => {
+  ruleContainer.classList.toggle('in-active');
+});
 /* const computerDisplayChoice = document.getElementById('computer-choice');
 const userDisplayChoice = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
