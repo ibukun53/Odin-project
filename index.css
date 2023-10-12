@@ -64,8 +64,8 @@ body {
 
 .rock-container{
   position: fixed;
-  margin-left: 41%;
-  margin-top: -10%;
+  margin-left: 43%;
+  margin-top: -9%;
 }
 
 .paper-container{
@@ -81,7 +81,7 @@ body {
 }
 
 .scissors-container {
-  margin-left: 50%;
+  margin-left: 52%;
   margin-top: -24%;
   position: fixed;
 }
