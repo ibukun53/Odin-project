@@ -65,7 +65,7 @@ body {
 .rock-container{
   position: fixed;
   margin-left: 43%;
-  margin-top: -9%;
+  margin-top: -8%;
 }
 
 .paper-container{
@@ -228,6 +228,44 @@ width: 50%;
 
 .choice-team {
   margin: auto;
+}
+
+@media only screen and (max-width: 768px){
+  .item-container {
+    margin: 4%; 
+  }
+  
+  .rounds {
+    width: 27%;
+  }
+
+  .bg-triangle{
+    margin-top: 14%;
+    margin-left: 20%;
+    width:55%;
+    position: relative;
+   }
+   
+  
+  .paper-container {
+    margin-top: -55%;
+    margin-left: 20%;
+   }
+
+   .scissors-container {
+    margin-left: 55%;
+    margin-top: -55%;
+  } 
+
+   .rock-container {
+  margin-left: 35%;
+  margin-top: -20%;
+ }
+ 
+ .rule-btn{
+  margin-top: 20%;
+ }
+ 
 }
 
 @media only screen and (max-width: 600px){
