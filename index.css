@@ -8,7 +8,7 @@ body {
   height:20%;
   margin-top: 10px;
   margin-bottom: 5%;
-  border: solid 3px #e4e0e0;
+  border: solid 3px hsl(217, 16%, 45%);
   border-radius: 10px;
   margin-left: 10%;
   left: 0;
@@ -17,15 +17,21 @@ body {
 
 .rounds {
   background: #fff;
-  padding: 4.5%;
-  height: 7%;
+  padding: 1%;
   margin: 4px;
   margin-left: auto;
   border-radius: 5px;
   font-size: 30px;
-  color: rgb(223, 151, 118);
+  font-weight: 600;
+  color: hsl(229, 64%, 46%);
+  width: 10%;
+  text-align: center;
+  height: 120px;
 }
 
+.sub-round{
+  color: hsl(229, 25%, 31%);
+}
 .item-container {
   margin: 1%; 
 }
@@ -90,14 +96,17 @@ body {
 }
 
 .paper-circle{
-  background-color: blue;
+  background-color: hsl(230, 89%, 62%);
 }
+
 .rock-circle{
-  background-color: red;
+  background-color:  hsl(349, 71%, 52%);
 }
+
 .scissors-circle{
-  background-color: yellow;
+  background-color: hsl(39, 89%, 49%)
 }
+
 .inner-circle{
   width: 110px;
   height:110px;
@@ -140,25 +149,32 @@ body {
 
 .rule-btn{
   padding: 5px 10px 18px 20px;
-  background-color: white;
-  color:black;
+  color: #fff;
   border-radius: 5px;
-  font-size:16px;
+  font-size: 20px;
+  font-weight: 600;
   width:80px;
   height:30px;
   margin-left: auto;
-  margin-top: 4%;
+  margin-bottom: 4%;
+  margin-top: 10px;
   text-align: center;
+  border: #fff solid 1px;
 }
 
 .rule-container {
 display: none;
 height: 70%;
+background-color: #fff;
 position: fixed;
 bottom: 10%;
 left: 25%;
-background-color: rgb(219, 219, 217);
 width: 40%;
+}
+
+.rule{
+  text-align: center;
+  margin:10px;
 }
 
 .sub-rules{
@@ -169,7 +185,8 @@ width: 40%;
 .rules-title{
   font-size: 30px;
   margin: 10px;
-  color: grey;
+  font-weight: 700;
+  color: hsl(217, 16%, 45%);
 }
 
 .close-rule{
@@ -192,6 +209,103 @@ width: 40%;
 .in-active{
   display: none;
 }
+
+.team{
+  display: flex;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.choice-team {
+  margin: auto;
+}
+
+@media only screen and (max-width: 600px){
+  .item-container {
+    margin: 8%; 
+  }
+  
+  .rounds {
+    margin: 15px;
+    margin-left: auto;
+    width: 30%;
+    height: 96px;
+    text-align: center;
+    font-size: 25px;
+  }
+
+  .logo{
+    width: 80%;
+    height: 100%;
+    margin: 1%;
+  }
+
+  .bg-triangle{
+    margin-top: 19%;
+    margin-left: 16%;
+    width: 70%;
+    position: relative;
+   }
+
+   .paper-container {
+    margin-top: -80%;
+    margin-left: 3%;
+   }
+
+   .scissors-container {
+    margin-left: 58%;
+    margin-top: -80%;
+  } 
+
+   .rock-container {
+  margin-left: 33%;
+  margin-top: -20%;
+ }
+
+
+.rule-btn{
+  height: 25px;
+  margin-left: 34%;
+  margin-top: 30%;
+  text-align: center;
+  position: fixed;
+  width: 90px;
+}
+
+.circle {
+  width: 120px;
+  height: 130px;
+}
+
+.inner-circle {
+  width: 90px;
+  height: 75%;
+}
+
+.rule-container {
+  height: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+.rule-image {
+  width: 100%;
+  margin-top: 20%;
+  margin-left: 0px;
+}
+.sub-rules {
+  margin-top: 30%;
+  text-align: center;
+  display: block;
+}
+
+.close-rule{
+  display: none;
+}
+}
+
 /*
 
 table,
@@ -263,34 +377,6 @@ h1 {
   margin: auto;
 }
 
-.choice {
-  width: 20%;
-  min-height: 15%;
-  background: rgb(224, 196, 174);
-  padding-top: 50px;
-  color: rgb(29, 5, 5);
-  border-radius: 65%;
-  border: solid 5px rgb(163, 140, 131);
-  position: absolute;
-  text-align: center;
-}
-
-.teams {
-  display: flex;
-  margin: 5%;
-  font-size: 20px;
-}
-
-.choice-team {
-  margin: auto;
-}
-
-.result-team {
-  margin-left: 36%;
-  margin-bottom: 20%;
-  font-size: 30px;
-  margin-top: 16%;
-}
 
 .table-team {
   margin: auto;

@@ -8,6 +8,11 @@ const closeRule = document.querySelector('.close-rule');
 closeRule.addEventListener('click', () => {
   ruleContainer.classList.toggle('in-active');
 });
+
+const closePg = document.querySelector('.rule-container');
+closePg.addEventListener('click', () => {
+  ruleContainer.classList.toggle('in-active');
+});
 /* const computerDisplayChoice = document.getElementById('computer-choice');
 const userDisplayChoice = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
