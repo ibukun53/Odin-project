@@ -252,23 +252,24 @@ width: 50%;
   .paper-container {
     margin-top: -55%;
     margin-left: 20%;
+    position: fixed;
    }
 
    .scissors-container {
     margin-left: 55%;
     margin-top: -55%;
+    position: fixed;
   } 
 
    .rock-container {
   margin-left: 35%;
   margin-top: -20%;
+  position: fixed;
  }
  
  .rule-btn{
   margin-top: 20%;
  }
- 
-}
 
 @media only screen and (max-width: 600px){
   .item-container {
