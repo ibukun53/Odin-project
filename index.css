@@ -236,7 +236,9 @@ width: 50%;
   }
   
   .rounds {
-    width: 27%;
+    width: 25%;
+    height: 160px;
+}
   }
 
   .bg-triangle{
@@ -316,16 +318,19 @@ width: 50%;
    .paper-container {
     margin-top: -70%;
     margin-left: 10%;
+    position: fixed;
    }
 
    .scissors-container {
     margin-left: 58%;
     margin-top: -70%;
+    position: fixed;
   } 
 
    .rock-container {
   margin-left: 33%;
   margin-top: -20%;
+  position: fixed;
  }
 
 
