@@ -64,7 +64,7 @@ body {
 
 .rock-container{
   position: fixed;
-  margin-left: 43%;
+  margin-left: 42%;
   margin-top: -9%;
 }
 
@@ -296,16 +296,19 @@ width: 50%;
   .paper-container {
     margin-top: -33%;
     margin-left: 25%;
+    position:fixed;
    }
 
    .scissors-container {
     margin-left: 50%;
     margin-top: -32%;
+    position:fixed;
   } 
 
    .rock-container {
   margin-left: 38%;
   margin-top: -13%;
+  position:fixed;
  }
 
  .rule-btn {
@@ -365,12 +368,12 @@ width: 50%;
    }
 
    .scissors-container {
-    margin-left: 58%;
+    margin-left: 60%;
     margin-top: -70%;
   } 
 
    .rock-container {
-  margin-left: 33%;
+  margin-left: 35%;
   margin-top: -20%;
  }
 
@@ -378,7 +381,7 @@ width: 50%;
 .rule-btn{
   height: 25px;
   margin-left: 34%;
-  margin-top: 30%;
+  margin-top: 25%;
   text-align: center;
   position: fixed;
   width: 90px;
@@ -418,6 +421,43 @@ width: 50%;
 }
 
 }
+
+@media only screen and (min-width: 1000px){
+  .bg-triangle{
+   width: 30%;
+  }
+  
+  .rock-container{
+    margin-left: 40%;
+  }
+  
+  .paper-container{
+    margin-top: -30%;
+  }
+  
+  .computer-result {
+    margin-left: 61%;
+    position: fixed;
+    margin-top: -11%;
+  }
+  
+  .scissors-container {
+    margin-top: -30%;
+    margin-left: 55%;
+  }
+  
+  .circle {
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+}
+
+
 /*
 
 table,
