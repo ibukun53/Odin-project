@@ -265,6 +265,55 @@ width: 50%;
  
 }
 
+@media only screen and (min-width: 480px) and (max-width: 1024px){
+  .container {
+    margin-bottom: -60px;
+  }
+  
+  .item-container {
+    margin: 2%; 
+  }
+
+  .logo{
+    width: 130%;
+    height: 95%
+  }
+  
+  .rounds {
+    width: 20%;
+    height: 135px;
+    padding: 1%;
+  }
+
+  .bg-triangle{
+    margin-top: 14%;
+    margin-left: 32%;
+    width: 30%;
+    position: relative;
+   }
+   
+  
+  .paper-container {
+    margin-top: -33%;
+    margin-left: 25%;
+   }
+
+   .scissors-container {
+    margin-left: 50%;
+    margin-top: -32%;
+  } 
+
+   .rock-container {
+  margin-left: 38%;
+  margin-top: -13%;
+ }
+
+ .rule-btn {
+  margin-top: -30px;
+}
+}
+
+
 @media only screen and (max-width: 600px){
   .item-container {
     margin: 4%; 
@@ -367,8 +416,8 @@ width: 50%;
 .close-rule{
   display: none;
 }
-}
 
+}
 /*
 
 table,
