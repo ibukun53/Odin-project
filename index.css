@@ -422,40 +422,7 @@ width: 50%;
 
 }
 
-@media only screen and (min-width: 1000px){
-  .bg-triangle{
-   width: 30%;
-  }
-  
-  .rock-container{
-    margin-left: 40%;
-  }
-  
-  .paper-container{
-    margin-top: -30%;
-  }
-  
-  .computer-result {
-    margin-left: 61%;
-    position: fixed;
-    margin-top: -11%;
-  }
-  
-  .scissors-container {
-    margin-top: -30%;
-    margin-left: 55%;
-  }
-  
-  .circle {
-    width:150px;
-    height:150px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-}
+
 
 
 /*
