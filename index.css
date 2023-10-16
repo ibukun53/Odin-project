@@ -333,7 +333,7 @@ width: 50%;
 
   .rule-btn {
     margin-top: 10%;
-    margin-left: 42%;
+    margin-left: 82%;
   }
 
   .bg-triangle{
@@ -378,8 +378,7 @@ width: 50%;
 }
 
 @media only screen and (min-width: 480px) and (max-height:800px){
- 
-  .container {
+ .container {
     margin-bottom: -19%;
 }
 
@@ -527,11 +526,11 @@ width: 50%;
   display: block;
 }
 
-.close-rule{
+.close-rule {
   display: none;
 }
 
-.close-rule2{
+.close-rule2 {
   display: block;
   margin: auto;
   margin-top: 15%;
@@ -540,7 +539,7 @@ width: 50%;
 }
 
 
-@media only screen and (min-width: 540px) and (max-height:720px){
+@media only screen and (min-width: 540px) and (max-height:720px) {
 
   .item-container {
     margin: 4%; 
@@ -558,10 +557,6 @@ width: 50%;
   .bg-triangle{
     margin-top: 22%;
    }
-
-  .rule-btn{
-  margin-top: -2%;
-  }
 
 .rule-container {
   height: 100%;
@@ -584,7 +579,6 @@ width: 50%;
 .rule-image {
   width: 80%;
   margin-top: 10%;
-  margin-left: 0px;
 }
 
 .close-rule{
