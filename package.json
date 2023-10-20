@@ -1,31 +1,8 @@
 {
-  "name": "rock-paper-scissors",
-  "version": "0.1.0",
-  "private": true,
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.28.1",
-    "htmlhint": "^1.1.4",
-    "prettier": "^1.19.1",
-    "stylelint": "^13.x",
-    "stylelint-config-recommended": "^3.x",
-    "stylelint-config-standard": "^20.x",
-    "stylelint-csstree-validator": "^1.x",
-    "stylelint-scss": "^3.x"
-  },
-  "scripts": {
-    "format": "npx prettier --write \"**/*.{html,json,md,yaml,yml}\"",
-    "format:check": "npx prettier  --check \"**/*.{html,json,md,yaml,yml}\"",
-    "lint": "npx stylelint \"**/*.css\" --fix && npx eslint . --fix",
-    "lint:check": "npx stylelint \"**/*.css\" && npx eslint .",
-    "stylelint": "npx stylelint \"**/*.css\" --fix",
-    "stylelint:check": " ",
-    "eslint": "npx eslint . --fix",
-    "eslint:check": "npx eslint ."
-  },
-  "dependencies": {
-    "lodash": "^4.17.21"
-  }
+  "name": "Rock-Paper-Scissors-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ibukun53/Rock-Paper-Scissors-project.git",
+  "author": "Blessing Olusanya <debbyblessing1234@gmail.com>",
+  "license": "MIT"
 }
