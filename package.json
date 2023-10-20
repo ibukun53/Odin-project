@@ -23,5 +23,8 @@
     "stylelint:check": " ",
     "eslint": "npx eslint . --fix",
     "eslint:check": "npx eslint ."
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
