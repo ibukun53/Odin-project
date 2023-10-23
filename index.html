@@ -1,65 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ROCK,Paper,scissors</title>
+    <title>Rock, Paper,scissors</title>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <div class="container">
       <div class="item-container">
-        <h2 class="item">ROCK</h2>
-        <h2 class="item">SCISSORS</h2>
-        <h2 class="item">PAPER</h2>
+        <img class="logo" src="image/logo.svg" alt="logo" />
       </div>
-      <span class="rounds">Live 5</span>
-    </div>
-    <div class="btn-container">
-      <image src="image/paper.jpg" class="btn" id="paper" alt="paper"></image>
-      <image src="image/scissors.jpg" class="btn" id="scissors" alt="scissors"></image>
-      <image src="image/rock.jpg" class="btn" id="rock" alt="rock"></image>
-    </div>
-    <div class="teams">
-      <h2 class="choice-team">
-        player played <br /><br /><span class="choice" id="your-choice"></span>
-      </h2>
-      <h2 class="choice-team">
-        computer played <br /><br /><span class="choice" id="computer-choice"></span>
-      </h2>
-    </div>
-    <h2 class="result-team">result<span class="choice" id="result"></span></h2>
-
-    <table class="table-team">
-      <tr>
-        <th>Team</th>
-        <th>Scores</th>
-      </tr>
-      <tr>
-        <td>Computer-choice</td>
-        <td id="computer-result"></td>
-      </tr>
-      <tr>
-        <td>Player-choice</td>
-        <td id="player-result"></td>
-      </tr>
-      <tr>
-        <td>Draw</td>
-        <td id="draw-result"></td>
-      </tr>
-      <tr>
-        <td>Result</td>
-        <td id="team-result"></td>
-      </tr>
-    </table>
-
-    <div class="up">
-      <div class="popup hidden">
-        <span class="mytxt">GAME IS OVER</span>
-        <p class="resultTeam"></p>
-        <button type="button" class="game">Retry</button>
+      <div class="rounds">
+        <p class="header">SCORE</p>
+        <p class="sub-header">12</p>
       </div>
     </div>
-    <script src="app.js"></script>
+    <div class="main-container">
+      <img class="bg-triangle" src="image/bg-triangle.svg" alt="triangle" />
+      <div class="rock-container items">
+        <div class="circle rock-circle">
+          <div class="inner-circle">
+            <img class="rock-icon" id="Rock" src="image/Rock.svg" alt="rock-icon" />
+          </div>
+        </div>
+      </div>
+      <div class="sub-container">
+        <div class="paper-container items">
+          <div class="circle paper-circle">
+            <div class="inner-circle">
+              <img class="paper-icon" id="Paper" src="image/Paper.svg" alt="paper-icon" />
+            </div>
+          </div>
+        </div>
+        <div class="scissors-container items">
+          <div class="circle scissors-circle">
+            <div class="inner-circle">
+              <img
+                class="scissors-icon"
+                id="Scissors"
+                src="image/Scissors.svg"
+                alt="scissors-icon"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="computer-result"></div>
+    <div class="rule-btn">
+      <p class="rule">RULES</p>
+    </div>
+    <div class="rule-container">
+      <div class="rule">
+        <div class="sub-rules">
+          <p class="rules-title">RULES</p>
+          <img class="close-rule" src="image/icon-close.svg" alt="icon-rule" />
+        </div>
+        <img class="rule-image" src="image/image-rules.svg" alt="rules" />
+        <img class="close-rule2" src="image/icon-close.svg" alt="icon-rule" />
+      </div>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>

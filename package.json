@@ -1,28 +1,40 @@
 {
-  "name": "odin-project",
-  "version": "0.1.0",
+  "name": "rock-paper-scissors",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {},
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": "please-use-yarn"
+  },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.26.0",
-    "prettier": "^1.19.1",
-    "stylelint": "^13.x",
-    "stylelint-config-recommended": "^3.x",
-    "stylelint-config-standard": "^20.x",
-    "stylelint-csstree-validator": "^1.x",
-    "stylelint-scss": "^3.x"
+    "axe-core": "^4.7.2",
+    "axe-puppeteer": "^1.1.1",
+    "eslint": "^8.41.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "htmlhint": "^1.1.4",
+    "prettier": "^3.0.3",
+    "puppeteer": "^20.4.0",
+    "stylelint": "^15.6.2",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recommended": "^12.0.0",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-csstree-validator": "^2.1.0",
+    "stylelint-prettier": "^3.0.0"
   },
   "scripts": {
-    "format": "npx prettier --write \"**/*.{html,json,md,yaml,yml}\"",
+    "format": "npx prettier  --write \"**/*.{html,json,md,yaml,yml}\"",
     "format:check": "npx prettier  --check \"**/*.{html,json,md,yaml,yml}\"",
     "lint": "npx stylelint \"**/*.css\" --fix && npx eslint . --fix",
     "lint:check": "npx stylelint \"**/*.css\" && npx eslint .",
     "stylelint": "npx stylelint \"**/*.css\" --fix",
-    "stylelint:check": " ",
+    "stylelint:check": "npx stylelint \"**/*.css\"",
     "eslint": "npx eslint . --fix",
-    "eslint:check": "npx eslint ."
+    "eslint:check": "npx eslint .",
+    "axe": "node axe-check.js",
+    "lint:html": "htmlhint ."
   }
 }
